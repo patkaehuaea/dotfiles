@@ -13,7 +13,6 @@ return {
 		file_manager 									= 'dolphin',                                -- GUI File manager
 		network_manager 								= 'nm-connection-editor',					-- Network manager
 		bluetooth_manager 								= 'blueman-manager',						-- Bluetooth manager
-		power_manager 									= 'cbatticon',					-- Power manager
 		package_manager 								= 'pamac-manager',							-- GUI Package manager
 		lock 											= 'awesome-client "_G.show_lockscreen()"',  -- Lockscreen
 		rofiweb											= 'rofi -dpi ' .. screen.primary.dpi .. 
