@@ -10,7 +10,7 @@ return {
 		terminal 										= 'terminal',                                  -- Terminal Emulator
 		text_editor 									= 'vim',                                  -- GUI Text Editor
 		web_browser 									= 'firefox',                                -- Web browser
-		file_manager 									= 'dolphin',                                -- GUI File manager
+		file_manager 									= 'ranger',                                -- GUI File manager
 		network_manager 								= 'networkmanager_dmenu',					-- Network manager
 		bluetooth_manager 								= 'blueman-manager',						-- Bluetooth manager
 		package_manager 								= 'pamac-manager',							-- GUI Package manager
