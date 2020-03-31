@@ -11,7 +11,7 @@ return {
 		text_editor 									= 'vim',                                  -- GUI Text Editor
 		web_browser 									= 'firefox',                                -- Web browser
 		file_manager 									= 'dolphin',                                -- GUI File manager
-		network_manager 								= 'nm-connection-editor',					-- Network manager
+		network_manager 								= 'networkmanager_dmenu',					-- Network manager
 		bluetooth_manager 								= 'blueman-manager',						-- Bluetooth manager
 		package_manager 								= 'pamac-manager',							-- GUI Package manager
 		lock 											= 'awesome-client "_G.show_lockscreen()"',  -- Lockscreen
