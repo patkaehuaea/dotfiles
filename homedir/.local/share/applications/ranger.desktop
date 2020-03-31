@@ -1,0 +1,12 @@
+[Desktop Entry]
+Type=Application
+Name=ranger
+Comment=Launches the ranger file manager
+Icon=utilities-terminal
+# Two settings below enable ranger to be used as default for inode/directory.
+# Firefox or similar browser will open if not set.
+Terminal=false
+Exec=konsole -e ranger
+Categories=ConsoleOnly;System;FileTools;FileManager
+MimeType=inode/directory;
+Keywords=File;Manager;Browser;Explorer;Launcher;Vi;Vim;Python
