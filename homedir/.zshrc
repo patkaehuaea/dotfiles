@@ -21,6 +21,9 @@ plugins=(jira colorize compleat dirpersist autojump git gulp history cp)
 
 source $ZSH/oh-my-zsh.sh
 
+# Enable shell command correction via: https://github.com/nvbn/thefuck
+eval $(thefuck --alias)
+
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 # Customize to your needs...

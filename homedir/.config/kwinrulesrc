@@ -4,7 +4,7 @@ opacityactive=100
 opacityactiverule=2
 opacityinactive=100
 opacityinactiverule=2
-wmclass=conky|pqiv|plasmashell|rpcs3|google-chrome|kcmshell5|mail|thunderbird|virtualbox machine|virtualbox|steam|jetbrains-goland|slack|brave-browser
+wmclass=conky|pqiv|plasmashell|rpcs3|google-chrome|kcmshell5|mail|thunderbird|virtualbox machine|virtualbox|steam|jetbrains-goland|slack|brave-browser|navigator firefox|
 wmclasscomplete=false
 wmclassmatch=3
 

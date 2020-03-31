@@ -7,15 +7,16 @@ if empty(glob('~/.vim/autoload/plug.vim'))
     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
-
 call plug#begin('~/.vim/plugged')
+
+" Dark blue color scheme for Vim and Neovim
+Plug 'cocopon/iceberg.vim'
 
 " Nord theme for vim.
 Plug 'arcticicestudio/nord-vim'
 
 " A vim plugin for syntax highlighting Ansible's common filetypes.
 Plug 'pearofducks/ansible-vim'
-
 " Navigation for Chef cookbooks and recipes.
 Plug 'dougireton/vim-chef'
 
@@ -24,6 +25,9 @@ Plug 'vim-ruby/vim-ruby'
 
 " Syntax coloring and functions for YAML.
 Plug 'mrk21/yaml-vim'
+
+" Vim files for working with Pulumi
+Plug 'pgavlin/pulumi.vim'
 
 " File system explorer for vim.
 Plug 'scrooloose/nerdtree'
@@ -59,7 +63,9 @@ call plug#end()
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Set colorscheme after installing plugins to prevent
 " 'colorscheme not found' error.
-colorscheme nord
+colorscheme iceberg
+" Active Cursor Line Number Background
+let g:nord_cursor_line_number_background = 1
 syntax on " syntax highlighting on
 syntax enable
 let mapleader =","
@@ -130,9 +136,9 @@ set laststatus=2 " always show the status line
 set ai " autoindent (filetype indenting instead)
 set nosi " smartindent (filetype indenting instead)
 set cindent " do c-style indenting
-set softtabstop=4 " unify
-set shiftwidth=4 " unify
-set tabstop=4 " real tabs should be 4, but they will show with set list on
+set softtabstop=2 " unify
+set shiftwidth=2 " unify
+set tabstop=2 " real tabs should be 4, but they will show with set list on
 set copyindent " but above all -- follow the conventions laid before us
 " wrap lines at 120 chars. 80 is somewhat antiquated with nowadays displays.
 set textwidth=120
@@ -198,6 +204,9 @@ iab xdate <c-r>=strftime("%d/%m/%y %H:%M:%S")<cr>
 " Autocommands
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 au BufRead,BufNewFile *.zcml set filetype=xml
+au BufRead,BufNewFile *.lua set tabstop=2
+au BufRead,BufNewFile *.lua set shiftwidth=2
+au BufRead,BufNewFile *.lua set softtabstop=2
 au BufRead,BufNewFile *.rb,*.rhtml set tabstop=2
 au BufRead,BufNewFile *.rb,*.rhtml set shiftwidth=2
 au BufRead,BufNewFile *.rb,*.rhtml set softtabstop=2
