@@ -107,6 +107,7 @@ wibox.widget {
 
 	local decorate_titlebar = function(c, pos, bg, size)
 
+    print('titlebar position:', pos)
 		c.titlebar_position = pos
 
 		if pos == 'left' or pos == 'right' then
@@ -204,16 +205,18 @@ wibox.widget {
 	-- Generate a custom titlabar for each class, roles, type, etc., etc.
 	-- The titlebar's position can now be set differently
 
+  -- TODO: This is messy and should be cleaned up if I always want the titlebar to be on top.
+  print('c.class:', c.class)
+  print('c.role:', c.role)
 	if c.role == "GtkFileChooserDialog" or c.type == 'dialog' or c.type == 'modal' then
-
 		-- Let's use the gtk theme's bg_color as titlebar's bg then add some transparency
 		-- Let's set the titlebar's position to top
 		-- Isn't it neat? lol
 		decorate_titlebar(c, 'top', beautiful.gtk.get_theme_variables().bg_color:sub(1,7) .. '66', titlebar_size)
 	
-	elseif c.class == "kitty" then
+	elseif c.class == "konsole" then
 
-		decorate_titlebar(c, 'left', '#000000AA', titlebar_size)
+		decorate_titlebar(c, 'top', '#000000AA', titlebar_size)
 
 	elseif c.class == 'XTerm' or c.class == 'UXTerm' then
 
@@ -221,14 +224,13 @@ wibox.widget {
 		-- awesome is the shit boi!
 		decorate_titlebar(c, 'top', beautiful.xresources.get_current_theme().background, titlebar_size)
 
-	elseif c.class == 'Nemo' then
+	elseif c.class == 'Dolphin' then
 
-		decorate_titlebar(c, 'left', beautiful.background, titlebar_size)
+		decorate_titlebar(c, 'top', beautiful.background, titlebar_size)
 
 	else
-
 		-- Default titlebar
-		decorate_titlebar(c)
+		decorate_titlebar(c, 'top')
 
 	end
 
@@ -249,9 +251,9 @@ client.connect_signal(
 	function(c)
 		
 		if not c.max and not c.hide_titlebars then
-			awful.titlebar.show(c, c.titlebar_position or 'left')
+			awful.titlebar.show(c, c.titlebar_position or 'top')
 		else
-			awful.titlebar.hide(c, c.titlebar_position or 'left')
+			awful.titlebar.hide(c, c.titlebar_position or 'top')
 		end
 
 	end
@@ -267,9 +269,9 @@ screen.connect_signal(
 			if (#s.tiled_clients > 1 or c.floating) and c.first_tag.layout.name ~= 'max' then
 
 				if not c.hide_titlebars then
-					awful.titlebar.show(c, c.titlebar_position or 'left')
+					awful.titlebar.show(c, c.titlebar_position or 'top')
 				else 
-					awful.titlebar.hide(c, c.titlebar_position or 'left')
+					awful.titlebar.hide(c, c.titlebar_position or 'top')
 				end
 
 				if c.maximized or not c.round_corners or c.fullscreen then
@@ -284,7 +286,7 @@ screen.connect_signal(
 
 			elseif (#s.tiled_clients == 1 or c.first_tag.layout.name == 'max') and not c.fullscreen then
 
-				awful.titlebar.hide(c, c.titlebar_position or 'left')
+				awful.titlebar.hide(c, c.titlebar_position or 'top')
 
 				c.shape = function(cr, w, h)
 					gears.shape.rectangle(cr, w, h)
