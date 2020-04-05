@@ -105,42 +105,38 @@ ruled.client.connect_signal("request::rules", function()
 	}
 
 	-- terminal emulators
-	ruled.client.append_rule {
-		id         = "terminals",
-		rule_any   = { 
-			class = { 
-				"URxvt",
-				"XTerm",
-				"UXTerm",
-				"kitty",
-				"K3rmit"
-			},
-		},
-		except_any = {
-			-- Exclude the QuakeTerminal
-			instance = { "QuakeTerminal" }
-		},
-		properties = {
-			tag = '1',
-			switchtotag = true,
-			draw_backdrop = false,
-			size_hints_honor = false
-		}
-	}
+-- 	ruled.client.append_rule {
+-- 		id         = "terminals",
+-- 		rule_any   = { 
+-- 			class = { 
+-- 				"kitty"
+-- 			},
+-- 		},
+-- 		except_any = {
+-- 			-- Exclude the QuakeTerminal
+-- 			instance = { "QuakeTerminal" }
+-- 		},
+-- 		properties = {
+-- 			tag = '1',
+-- 			switchtotag = true,
+-- 			draw_backdrop = false,
+-- 			size_hints_honor = false
+-- 		}
+-- 	}
 
 	-- Browsers
-	ruled.client.append_rule {
-		id         = "web_browsers",
-		rule_any   = { 
-			class = {
-				"firefox",
-				"Tor Browser"
-			}
-		},
-		properties = { 
-			tag = '2'
-		}
-	}
+-- 	ruled.client.append_rule {
+-- 		id         = "web_browsers",
+-- 		rule_any   = { 
+-- 			class = {
+-- 				"firefox",
+-- 				"Tor Browser"
+-- 			}
+-- 		},
+-- 		properties = { 
+-- 			tag = '2'
+-- 		}
+-- 	}
 
 	-- text editors
 	ruled.client.append_rule {
@@ -167,10 +163,7 @@ ruled.client.connect_signal("request::rules", function()
 		id         = "file_managers",
 		rule_any   = {  
 			class = {
-				"dolphin",
-				"ark",
-				"Nemo",
-				"File-roller"
+				"ranger"
 			}
 		},
 		properties = { 
@@ -282,6 +275,52 @@ ruled.client.connect_signal("request::rules", function()
 		}
 	}
 
+	-- Plasma e.g. top bar
+	ruled.client.append_rule {
+		id       = "instances",
+		rule_any = {
+			instance    = {
+				"Plasma",
+			},
+		},
+			properties = { 
+			skip_decoration = true,
+			hide_titlebars = true,
+			ontop = true,
+			floating = true,
+			draw_backdrop = false,
+			focus = awful.client.focus.filter,
+			raise = true,
+			keys = client_keys,
+			buttons = client_buttons,
+			placement = awful.placement.top
+		}
+	}
+	
+	-- KDE Show title bars for system settings and other
+	-- non toolbar related applications. Will have difficulty
+	-- closing windows if not present.
+	ruled.client.append_rule {
+		id       = "instances",
+		rule_any = {
+			instance    = {
+				"plasmashell"
+			},
+		},
+			properties = { 
+			skip_decoration = true,
+			hide_titlebars = false,
+			ontop = true,
+			floating = true,
+			draw_backdrop = false,
+			focus = awful.client.focus.filter,
+			raise = true,
+			keys = client_keys,
+			buttons = client_buttons,
+			placement = awful.placement.top
+		}
+	}
+	
 	-- Instances
 	ruled.client.append_rule {
 		id       = "instances",

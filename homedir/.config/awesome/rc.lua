@@ -66,11 +66,12 @@ awful.layout.remove_default_layout(awful.layout.suit.fair.horizontal)
 awful.layout.remove_default_layout(awful.layout.suit.spiral)
 awful.layout.remove_default_layout(awful.layout.suit.spiral.dwindle)
 awful.layout.remove_default_layout(awful.layout.suit.max.fullscreen)
-awful.layout.remove_default_layout(awful.layout.suit.magnifier)
+--awful.layout.remove_default_layout(awful.layout.suit.magnifier)
 awful.layout.remove_default_layout(awful.layout.suit.corner.nw)
 awful.layout.remove_default_layout(awful.layout.suit.corner.ne)
 awful.layout.remove_default_layout(awful.layout.suit.corner.sw)
 awful.layout.remove_default_layout(awful.layout.suit.corner.se)
+awful.layout.append_default_layout(lain.layout.centerwork)
 awful.layout.append_default_layout(lain.layout.termfair.center)
 lain.layout.termfair.center.nmaster = 3
 lain.layout.termfair.center.ncol    = 1

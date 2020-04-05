@@ -6,7 +6,6 @@ local dpi = require('beautiful').xresources.apply_dpi
 
 local theme_dir = filesystem.get_configuration_dir() .. '/theme'
 local lain_icon_dir = filesystem.get_configuration_dir() .. '/lain/icons/layout/default'
-
 local titlebar_theme = "stoplight"
 local titlebar_icon_path = theme_dir .. "/icons/titlebar/" .. titlebar_theme .. '/'
 local tip = titlebar_icon_path
@@ -14,7 +13,8 @@ local tip = titlebar_icon_path
 
 local theme = {}
 theme.icons = theme_dir .. '/icons/'
-theme.icons = theme_dir .. '/icons/'
+theme.lain_icons         = os.getenv("HOME") ..
+                           "/.config/awesome/lain/icons/layout/default/"
 
 -- Font
 theme.font = 'SF Pro Text Regular 10'
@@ -192,7 +192,12 @@ theme.layout_cornernw = theme.icons.."layouts/cornernww.png"
 theme.layout_cornerne = theme.icons.."layouts/cornernew.png"
 theme.layout_cornersw = theme.icons.."layouts/cornersww.png"
 theme.layout_cornerse = theme.icons.."layouts/cornersew.png"
-theme.layout_centerfair = theme.icons.."layouts/centerfair.png"
+theme.layout_termfair    = theme.lain_icons .. "termfair.png"
+theme.layout_centerfair  = theme.lain_icons .. "centerfair.png"  -- termfair.center
+theme.layout_cascade     = theme.lain_icons .. "cascade.png"
+theme.layout_cascadetile = theme.lain_icons .. "cascadetile.png" -- cascade.tile
+theme.layout_centerwork  = theme.lain_icons .. "centerwork.png"
+theme.layout_centerworkh = theme.lain_icons .. "centerworkh.png" -- centerwork.horizontal
 
 	-- Taglist
 
