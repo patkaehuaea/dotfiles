@@ -18,16 +18,16 @@ Height 1080=1004
 Height 1800=1028
 Height 1944=1860
 Height 1961=795
-Height 2160=2007
+Height 2160=2068
 MenuBar=Disabled
 ShowMenuBarByDefault=false
-State=AAAA/wAAAAD9AAAAAAAAB3EAAAfXAAAABAAAAAQAAAAIAAAACPwAAAAA
+State=AAAA/wAAAAD9AAAAAAAADwAAAAgUAAAABAAAAAQAAAAIAAAACPwAAAAA
 ToolBarsMovable=Disabled
 Width 1920=1920
 Width 3200=1622
 Width 3456=3456
 Width 3486=1473
-Width 3840=1905
+Width 3840=3840
 
 [Notification Messages]
 ShowPasteUnprintableWarning=true

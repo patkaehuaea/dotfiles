@@ -5,6 +5,7 @@ local filesystem = require('gears.filesystem')
 local dpi = require('beautiful').xresources.apply_dpi
 
 local theme_dir = filesystem.get_configuration_dir() .. '/theme'
+local lain_icon_dir = filesystem.get_configuration_dir() .. '/lain/icons/layout/default'
 
 local titlebar_theme = "stoplight"
 local titlebar_icon_path = theme_dir .. "/icons/titlebar/" .. titlebar_theme .. '/'
@@ -12,6 +13,7 @@ local tip = titlebar_icon_path
 
 
 local theme = {}
+theme.icons = theme_dir .. '/icons/'
 theme.icons = theme_dir .. '/icons/'
 
 -- Font
@@ -31,7 +33,7 @@ local awesome_overrides = function(theme)
 
 	-- Wallpaper
 
-	theme.wallpaper = theme.dir .. '/wallpapers/morning-wallpaper.jpg'
+	theme.wallpaper = theme.dir .. '/wallpapers/theme/wallpapers/willian-justen-de-vasconellos-unsplash-wallpaper.jpg'
 
 	-- Foreground
 
@@ -174,11 +176,24 @@ local awesome_overrides = function(theme)
 
 	-- Layoutbox icons
 
-	theme.layout_max = theme.icons .. 'layouts/max.svg'
-	theme.layout_tile = theme.icons .. 'layouts/tile.svg'
-	theme.layout_dwindle = theme.icons .. 'layouts/dwindle.svg'
-	theme.layout_floating = theme.icons .. 'layouts/floating.svg'
-	
+theme.layout_fairh = theme.icons.."layouts/fairhw.png"
+theme.layout_fairv = theme.icons.."layouts/fairvw.png"
+theme.layout_floating  = theme.icons.."layouts/floatingw.png"
+theme.layout_magnifier = theme.icons.."layouts/magnifierw.png"
+theme.layout_max = theme.icons.."layouts/maxw.png"
+theme.layout_fullscreen = theme.icons.."layouts/fullscreenw.png"
+theme.layout_tilebottom = theme.icons.."layouts/tilebottomw.png"
+theme.layout_tileleft   = theme.icons.."layouts/tileleftw.png"
+theme.layout_tile = theme.icons.."layouts/tilew.png"
+theme.layout_tiletop = theme.icons.."layouts/tiletopw.png"
+theme.layout_spiral  = theme.icons.."layouts/spiralw.png"
+theme.layout_dwindle = theme.icons.."layouts/dwindlew.png"
+theme.layout_cornernw = theme.icons.."layouts/cornernww.png"
+theme.layout_cornerne = theme.icons.."layouts/cornernew.png"
+theme.layout_cornersw = theme.icons.."layouts/cornersww.png"
+theme.layout_cornerse = theme.icons.."layouts/cornersew.png"
+theme.layout_centerfair = theme.icons.."layouts/centerfair.png"
+
 	-- Taglist
 
 	theme.taglist_bg_empty = theme.background .. '99'

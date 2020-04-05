@@ -9,6 +9,7 @@
 
 local gears = require('gears')
 local awful = require('awful')
+local lain = require('lain')
 local beautiful = require('beautiful')
 
 require('awful.autofocus')
@@ -41,7 +42,7 @@ require('module.menu')
 require('module.volume-osd')
 require('module.brightness-osd')
 require('module.dynamic-wallpaper')
-require('module.lockscreen')
+--require('module.lockscreen')
 
 --  ========================================
 -- 				Configuration
@@ -70,6 +71,9 @@ awful.layout.remove_default_layout(awful.layout.suit.corner.nw)
 awful.layout.remove_default_layout(awful.layout.suit.corner.ne)
 awful.layout.remove_default_layout(awful.layout.suit.corner.sw)
 awful.layout.remove_default_layout(awful.layout.suit.corner.se)
+awful.layout.append_default_layout(lain.layout.termfair.center)
+lain.layout.termfair.center.nmaster = 3
+lain.layout.termfair.center.ncol    = 1
 
 --  ========================================
 -- 					Signals

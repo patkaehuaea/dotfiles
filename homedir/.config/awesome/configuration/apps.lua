@@ -7,14 +7,14 @@ local bin_dir = config_dir .. 'binaries/'
 return {
 	-- The default applications in keybindings and widgets
 	default = {
-		terminal 										= 'terminal',                                  -- Terminal Emulator
+		terminal 										= 'kitty',                                  -- Terminal Emulator
 		text_editor 									= 'vim',                                  -- GUI Text Editor
 		web_browser 									= 'firefox',                                -- Web browser
 		file_manager 									= 'ranger',                                -- GUI File manager
 		network_manager 								= 'networkmanager_dmenu',					-- Network manager
 		bluetooth_manager 								= 'blueman-manager',						-- Bluetooth manager
 		package_manager 								= 'pamac-manager',							-- GUI Package manager
-		lock 											= 'awesome-client "_G.show_lockscreen()"',  -- Lockscreen
+		--lock 											= 'awesome-client "_G.show_lockscreen()"',  -- Lockscreen
 		rofiweb											= 'rofi -dpi ' .. screen.primary.dpi .. 
 														  ' -show Search -modi Search:' .. config_dir .. 
 														  '/configuration/rofi/sidebar/rofi-web-search.py' .. 
@@ -33,8 +33,8 @@ return {
 		'xrdb $HOME/.Xresources',                                                                   -- Load X Colors
 		'nm-applet',                                                                                -- NetworkManager Applet
 		'pulseeffects --gapplication-service',                                                      -- Sound Equalizer
-		'xidlehook --not-when-fullscreen --not-when-audio --timer 600 '..
-		' "awesome-client \'_G.show_lockscreen()\'" ""'  											-- Auto lock timer
+--		'xidlehook --not-when-fullscreen --not-when-audio --timer 600 '..
+--		' "awesome-client \'_G.show_lockscreen()\'" ""'  											-- Auto lock timer
 	},
 
 	-- List of binaries that will execute a certain task
