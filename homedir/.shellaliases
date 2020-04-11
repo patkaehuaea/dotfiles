@@ -108,6 +108,8 @@ alias jsonfix="pbpaste | jq . | pbcopy"
 
 alias lookbusy="cat /dev/urandom | hexdump -C | grep \"34 32\""
 
+alias weather="curl 'wttr.in/Redmond?format=%l:+%c+%t+%w'"
+
 # Aliases for CLI based todo utility.'
 alias td="todo.sh"
 alias tda="todo.sh add"

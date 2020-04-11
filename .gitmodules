@@ -4,3 +4,6 @@
 [submodule "homedir/.config/awesome/freedesktop"]
 	path = homedir/.config/awesome/freedesktop
 	url = https://github.com/lcpz/awesome-freedesktop.git
+[submodule "homedir/.config/polybar/modules/polybar-i3-windows"]
+	path = homedir/.config/polybar/modules/polybar-i3-windows
+	url = https://github.com/meelkor/polybar-i3-windows.git

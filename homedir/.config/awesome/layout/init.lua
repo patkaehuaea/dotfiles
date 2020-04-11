@@ -7,7 +7,7 @@ local right_panel = require('layout.floating-panel.floating-panel')
 -- Create a wibox panel for each screen and add it
 screen.connect_signal("request::desktop_decoration", function(s)
 	s.top_panel = top_panel(s, false)
-	s.bottom_panel = bottom_panel(s)
+--	s.bottom_panel = bottom_panel(s)
 	s.right_panel = right_panel(s)
 	s.right_panel_show_again = false
 end)

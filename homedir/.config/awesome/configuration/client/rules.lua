@@ -104,57 +104,46 @@ ruled.client.connect_signal("request::rules", function()
 		}
 	}
 
-	-- terminal emulators
--- 	ruled.client.append_rule {
--- 		id         = "terminals",
--- 		rule_any   = { 
--- 			class = { 
--- 				"kitty"
--- 			},
--- 		},
--- 		except_any = {
--- 			-- Exclude the QuakeTerminal
--- 			instance = { "QuakeTerminal" }
--- 		},
--- 		properties = {
--- 			tag = '1',
--- 			switchtotag = true,
--- 			draw_backdrop = false,
--- 			size_hints_honor = false
--- 		}
--- 	}
+-- terminal emulators
+ruled.client.append_rule {
+	id         = "terminals",
+	rule_any   = { 
+		class = { 
+			"kitty"
+		},
+	},
+	properties = {
+		tag = '1',
+		switchtotag = true,
+		draw_backdrop = false,
+		size_hints_honor = false
+	}
+}
 
-	-- Browsers
--- 	ruled.client.append_rule {
--- 		id         = "web_browsers",
--- 		rule_any   = { 
--- 			class = {
--- 				"firefox",
--- 				"Tor Browser"
--- 			}
--- 		},
--- 		properties = { 
--- 			tag = '2'
--- 		}
--- 	}
+-- Browsers
+ruled.client.append_rule {
+	id         = "web_browsers",
+	rule_any   = { 
+		class = {
+			"firefox"
+		}
+	},
+	properties = { 
+		tag = '2'
+	}
+}
 
-	-- text editors
+	-- IDEs and Tools
 	ruled.client.append_rule {
-		id         = "text_editors",
+		id         = "ide",
 		rule_any   = {  
 			class = {
-				"Geany",
-				"Atom",
-				"Subl3",
-				"code-oss"
-			},
-			name  = {
-				"LibreOffice",
-				"libreoffice"
+				"jetbrains-studio"
 			}
 		},
 		properties = { 
-			tag = '3'
+			tag = '3',
+			skip_decoration = true
 		}
 	}
 
@@ -193,10 +182,7 @@ ruled.client.connect_signal("request::rules", function()
 		rule_any   = {  
 			class = {
 				"Wine",
-				"dolphin-emu",
-				"Steam",
-				"Citra",
-				"SuperTuxKart"
+				"Steam"
 			},
 		name = { "Steam" }
 		},
@@ -239,30 +225,11 @@ ruled.client.connect_signal("request::rules", function()
 		}
 	}
 
-	-- IDEs and Tools
-	ruled.client.append_rule {
-		id         = "ide",
-		rule_any   = {  
-			class = {
-				"Oomox",
-				"Unity",
-				"UnityHub",
-				"jetbrains-studio"
-			}
-		},
-		properties = { 
-			tag = '9',
-			skip_decoration = true
-		}
-	}
-
 	-- Hide titlebars
 	ruled.client.append_rule {
 		id        = "hide_titlebars",
 		rule_any  = {
 			class    = {
-				"feh",
-				"Mugshot",
 				"Pulseeffects"
 			},
 		},
@@ -274,53 +241,6 @@ ruled.client.connect_signal("request::rules", function()
 			placement = awful.placement.centered
 		}
 	}
-
--- 	-- Plasma e.g. top bar
--- 	ruled.client.append_rule {
--- 		id       = "instances",
--- 		rule_any = {
--- 			instance    = {
--- 				"Plasma",
--- 			},
--- 		},
--- 			properties = { 
--- 			skip_decoration = true,
--- 			hide_titlebars = true,
--- 			ontop = true,
--- 			floating = true,
--- 			draw_backdrop = false,
--- 			focus = awful.client.focus.filter,
--- 			raise = true,
--- 			keys = client_keys,
--- 			buttons = client_buttons,
--- 			placement = awful.placement.top
--- 		}
--- 	}
-	
-	-- KDE Show title bars for system settings and other
-	-- non toolbar related applications. Will have difficulty
-	-- closing windows if not present.
--- 	ruled.client.append_rule {
--- 		id       = "instances",
--- 		rule_any = {
--- 			instance    = {
--- 				"plasmashell"
--- 			},
--- 		},
--- 			properties = { 
--- 			skip_decoration = true,
--- 			hide_titlebars = false,
--- 			ontop = true,
--- 			floating = true,
--- 			draw_backdrop = false,
--- 			focus = awful.client.focus.filter,
--- 			raise = true,
--- 			keys = client_keys,
--- 			buttons = client_buttons,
--- 			placement = awful.placement.top
--- 		}
--- 	}
-	
 	-- Instances
 	ruled.client.append_rule {
 		id       = "instances",
@@ -344,29 +264,6 @@ ruled.client.connect_signal("request::rules", function()
 			placement = awful.placement.centered
 		}
 	}
-	
-	-- Fullsreen
-	ruled.client.append_rule {
-		id       = "fullscreen",
-		rule_any = {
-			class    = {
-				"SuperTuxKart"
-			},
-		},
-		properties = { 
-			skip_decoration = true,
-			round_corners = false,
-			ontop = true,
-			floating = false,
-			fullscreen = true,
-			draw_backdrop = false,
-			raise = true,
-			keys = client_keys,
-			buttons = client_buttons,
-			placement = awful.placement.centered
-		}
-	}
-
 
 end)
 
