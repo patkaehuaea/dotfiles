@@ -83,8 +83,6 @@ s.systray = wibox.widget {
 }
 
 	s.tray_toggler  = build_widget(require('widget.tray-toggler'))
-	s.bluetooth   	= build_widget(require('widget.bluetooth')())
-	s.wifi        	= build_widget(require('widget.wifi')())
 	s.search      	= require('widget.search-apps')()
 	
 	local separator =  wibox.widget {
@@ -109,8 +107,6 @@ s.systray = wibox.widget {
 				{
 					s.systray,
 					s.tray_toggler,
-					s.bluetooth,
-					s.wifi,
 					build_widget(layout_box(s)),
 					separator,
 					spacing = dpi(10),
