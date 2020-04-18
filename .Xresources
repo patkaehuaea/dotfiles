@@ -1,2 +1,5 @@
-# Set to ~ 120% to increase font size without losing resolution
+## Use to load colorschemes from external files.
+#include ".Xresources.d/nord"
+
+## Set to ~ 120% to increase font size without losing resolution.
 Xft.dpi: 115
