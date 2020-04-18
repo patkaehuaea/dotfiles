@@ -32,7 +32,7 @@ local return_button = function()
 	}
 
 	local clock_widget = wibox.widget.textclock(
-		'<span font="SF Pro Text Bold 11">%l:%M %p</span>',
+		'<span font="SFNS Display Bold 11">%A, %I:%M %p</span>',
 		1
 	)
 
