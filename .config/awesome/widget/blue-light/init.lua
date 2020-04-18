@@ -10,8 +10,7 @@ local icons = require('theme.icons')
 local blue_light_state = nil
 
 local action_name = wibox.widget {
-	text = 'Blue Light Filter',
-	font = 'SF Pro Text Regular 11',
+	font = 'SFNS Display 11',
 	align = 'left',
 	widget = wibox.widget.textbox
 }
@@ -108,15 +107,14 @@ widget_button:buttons(
 local action_widget =  wibox.widget {
 	{
 		action_name,
-		nil,
 		{
 			widget_button,
 			layout = wibox.layout.fixed.horizontal,
 		},
 		layout = wibox.layout.align.horizontal,
 	},
-	left = dpi(24),
-	right = dpi(24),
+	left = dpi(8),
+	right = dpi(8),
 	forced_height = dpi(48),
 	widget = wibox.container.margin
 }
