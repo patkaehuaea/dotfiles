@@ -36,8 +36,8 @@ local wall_dir = filesystem.get_configuration_dir() .. 'theme/wallpapers/'
 -- Default image format is jpg
 wallpaper_morning = 'willian-justen-de-vasconellos-unsplash-wallpaper.jpg'
 wallpaper_noon =  'willian-justen-de-vasconellos-unsplash-wallpaper.jpg'
-wallpaper_night =   'willian-justen-de-vasconellos-unsplash-wallpaper.jpg'
-wallpaper_midnight =    'willian-justen-de-vasconellos-unsplash-wallpaper.jpg'
+wallpaper_night =   'wallpapers/wallpapersden.com_trip-night_3840x2160.jpg'
+wallpaper_midnight =    'wallpapers/wallpapersden.com_trip-night_3840x2160.jpg'
 
 
 -- Change the wallpaper on scheduled time

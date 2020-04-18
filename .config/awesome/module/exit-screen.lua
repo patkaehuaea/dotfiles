@@ -14,7 +14,7 @@ local icon_size = beautiful.exit_screen_icon_size or dpi(90)
 
 local user_name = wibox.widget {
 	markup = 'Choose wisely, $USER!',
-	font = 'SF Pro Text UltraLight 48',
+	font = 'SFNS Display 48',
 	align = 'center',
 	valign = 'center',
 	widget = wibox.widget.textbox

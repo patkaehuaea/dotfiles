@@ -44,7 +44,7 @@ ruled.notification.connect_signal('request::rules', function()
 	ruled.notification.append_rule {
 		rule       = { urgency = 'critical' },
 		properties = { 
-			font        		= 'SF Pro Text Bold 10',
+			font        		= 'SFNS Display Bold 10',
 			bg 					= '#ff0000', 
 			fg 					= '#ffffff',
 			margin 				= dpi(16),
@@ -58,7 +58,7 @@ ruled.notification.connect_signal('request::rules', function()
 	ruled.notification.append_rule {
 		rule       = { urgency = 'normal' },
 		properties = {
-			font        		= 'SF Pro Text Regular 10',
+			font        		= 'SFNS Display 10',
 			bg      			= beautiful.transparent, 
 			fg 					= beautiful.fg_normal,
 			margin 				= dpi(16),
@@ -72,7 +72,7 @@ ruled.notification.connect_signal('request::rules', function()
 	ruled.notification.append_rule {
 		rule       = { urgency = 'low' },
 		properties = { 
-			font        		= 'SF Pro Text Regular 10',
+			font        		= 'SFNS Display 10',
 			bg     				= beautiful.transparent,
 			fg 					= beautiful.fg_normal,
 			margin 				= dpi(16),
@@ -123,7 +123,7 @@ naughty.connect_signal("request::display", function(n)
 					{
 						{
 							id     = 'text_role',
-							font   = 'SF Pro Text Regular 10',
+							font   = 'SFNS Display 10',
 							widget = wibox.widget.textbox
 						},
 						widget = wibox.container.place

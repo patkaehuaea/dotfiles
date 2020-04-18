@@ -12,7 +12,7 @@ local spawn = require('awful.spawn')
 
 local osd_header = wibox.widget {
 	text = 'Volume',
-	font = 'SF Pro Text Bold 12',
+	font = 'SFNS Display Bold 12',
 	align = 'left',
 	valign = 'center',
 	widget = wibox.widget.textbox
@@ -20,7 +20,7 @@ local osd_header = wibox.widget {
 
 local osd_value = wibox.widget {
 	text = '0%',
-	font = 'SF Pro Text Bold 12',
+	font = 'SFNS Display Bold 12',
 	align = 'center',
 	valign = 'center',
 	widget = wibox.widget.textbox
