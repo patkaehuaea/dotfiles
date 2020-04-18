@@ -17,12 +17,12 @@ theme.lain_icons         = os.getenv("HOME") ..
                            "/.config/awesome/lain/icons/layout/default/"
 
 -- Font
-theme.font = 'SF Pro Text Regular 10'
-theme.font_bold = 'SF Pro Text Bold 10'
+theme.font = 'SFNS Display 16'
+theme.font_bold = 'SFNS Display Bold 16'
 
 
 -- Menu icon theme
-theme.icon_theme = 'Tela-blue-dark'
+theme.icon_theme = 'Papirus'
 
 
 local awesome_overrides = function(theme)
@@ -33,12 +33,12 @@ local awesome_overrides = function(theme)
 
 	-- Wallpaper
 
-	theme.wallpaper = theme.dir .. '/wallpapers/theme/wallpapers/willian-justen-de-vasconellos-unsplash-wallpaper.jpg'
+	theme.wallpaper = theme.dir .. '/wallpapers/wallpapersden.com_trip-night_3840x2160.jpg'
 
 	-- Foreground
 
-	theme.font = 'SF Pro Text Regular 10'
-	theme.title_font = 'SF Pro Text Bold 14'
+	theme.font = 'SFNS Display 16'
+	theme.title_font = 'SFNS Display 16'
 
 
 	theme.fg_normal = '#ffffffde'
@@ -148,7 +148,7 @@ local awesome_overrides = function(theme)
 	theme.useless_gap = dpi(4)
 
 	-- Menu
-	theme.menu_font = "SF Pro Text Regular 11"
+	theme.menu_font = "SFNS Display 11"
 	theme.menu_submenu = '' -- ➤
 
 	theme.menu_height = dpi(34)
@@ -209,7 +209,7 @@ theme.layout_centerworkh = theme.lain_icons .. "centerworkh.png" -- centerwork.h
 
 	-- Tasklist
 
-	theme.tasklist_font = 'SF Pro Text Regular 10'
+	theme.tasklist_font = 'SFNS Display 10'
 	theme.tasklist_bg_normal = theme.background .. '99'
 	theme.tasklist_bg_focus = theme.background
 	theme.tasklist_bg_urgent = "#E91E63" .. '99'
@@ -236,8 +236,8 @@ theme.layout_centerworkh = theme.lain_icons .. "centerworkh.png" -- centerwork.h
 
 	-- Hotkey popup
 
-	theme.hotkeys_font = 'SF Pro Text Bold'
-	theme.hotkeys_description_font   = 'SF Pro Text Regular Regular'
+	theme.hotkeys_font = 'SFNS Display Bold'
+	theme.hotkeys_description_font   = 'SFNS Display'
 	theme.hotkeys_bg = theme.background
 	theme.hotkeys_group_margin = dpi(20)
 

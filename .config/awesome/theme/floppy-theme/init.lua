@@ -4,8 +4,8 @@ local theme_dir = filesystem.get_configuration_dir() .. '/theme'
 local theme = {}
 
 theme.icons = theme_dir .. '/icons/'
-theme.font = 'SF Pro Text Regular 10'
-theme.font_bold = 'SF Pro Text Bold 10'
+theme.font = 'SFNS Display 16'
+theme.font_bold = 'SFNS Display 16'
 
 
 -- Colorscheme
