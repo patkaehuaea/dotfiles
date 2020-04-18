@@ -9,6 +9,14 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 endif
 call plug#begin('~/.vim/plugged')
 
+
+" Gruvbox theme is heavily inspired by badwolf, jellybeans and solarized.
+Plug 'morhetz/gruvbox'
+
+set background=dark    " Setting dark mode
+" Molokai is a Vim port of the monokai theme for TextMate originally created by Wimer Hazenberg.
+Plug 'tomasr/molokai'
+
 " Dark blue color scheme for Vim and Neovim
 Plug 'cocopon/iceberg.vim'
 
@@ -63,7 +71,7 @@ call plug#end()
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Set colorscheme after installing plugins to prevent
 " 'colorscheme not found' error.
-colorscheme iceberg
+colorscheme gruvbox
 " Active Cursor Line Number Background
 let g:nord_cursor_line_number_background = 1
 syntax on " syntax highlighting on
