@@ -22,8 +22,7 @@ return {
 														  '/configuration/rofi/sidebar/rofi.rasi', 	-- Rofi Web Search
 
 		rofiappmenu 									= 'rofi -dpi ' .. screen.primary.dpi ..
-														  ' -show drun -theme ' .. config_dir ..
-														  '/configuration/rofi/appmenu/rofi.rasi'   -- Application Menu
+														  ' -show drun -theme ~/.config/rofi/launchers/simple.rasi'   -- Application Menu
 	},
 	
 	run_on_start_up = {

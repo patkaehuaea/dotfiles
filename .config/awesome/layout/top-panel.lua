@@ -186,7 +186,7 @@ local TopPanel = function(s, offset)
 	s.month_calendar      = awful.widget.calendar_popup.month({
 		start_sunday      = true,
 		spacing           = dpi(5),
-		font              = 'SF Pro Text Regular 10',
+		font              = 'SFNS Display 10',
 		long_weekdays     = true,
 		margin            = dpi(5),
 		screen            = s,
@@ -234,6 +234,7 @@ local TopPanel = function(s, offset)
 	)
 
 	s.updater 		= require('widget.package-updater')()
+	s.end_session 		= require('widget.end-session')()
 	s.screen_rec 	= require('widget.screen-recorder')()
 	s.music       	= require('widget.music')()
 	s.bluetooth   	= require('widget.bluetooth')()
@@ -262,7 +263,8 @@ local TopPanel = function(s, offset)
 			s.screen_rec,
 			s.music,
 			s.bluetooth,
-			s.wifi
+			s.wifi,
+			s.end_session
 		}
 	}
 

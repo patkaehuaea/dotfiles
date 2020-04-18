@@ -372,7 +372,7 @@ local globalKeys = awful.util.table.join(
     ),
     awful.key(
         {modkey}, 
-        'r',
+        'Return',
         function()
             awful.spawn(apps.default.terminal)
         end,
