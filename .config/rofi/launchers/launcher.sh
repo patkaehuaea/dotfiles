@@ -6,14 +6,11 @@
 ## Reddit : @adi1090x
 
 # Available Styles
+# >> Styles Below Only Works With "rofi-git(AUR)", Current Version: 1.5.4-76-gca067234
 #
-# >> Edit these files and uncomment the desired colors/style.
-#
-# style_icons_blur    style_icons_full    style_icons_rainbow    style_icons_rainbow_sidebar
-# style_icons_popup    style_normal    style_normal_grid    style_normal_grid_full    style_normal_grid_full_round
-# style_normal_grid_round    style_normal_purple    style_normal_purple_alt    style_normal_rainbow
-# style_normal_rainbow_sidebar
+# blurry	blurry_full		kde_simplemenu		kde_krunner		launchpad
+# gnome_do	slingshot		appdrawer			appfolder		column
+# row		row_center		screen				row_dock		row_dropdown
 
-style="style_icons_full"
-
-rofi -no-lazy-grab -show drun -theme launchers/"$style".rasi
+style=simple
+rofi -no-lazy-grab -show drun -theme $style.rasi

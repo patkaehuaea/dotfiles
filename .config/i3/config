@@ -2,7 +2,7 @@
 
 # Try to kill the wallpaper set by Plasma (it takes up the entire workspace
 # and hides everythiing)
-#exec --no-startup-id wmctrl -c Plasma
+exec --no-startup-id wmctrl -c Plasma
 for_window [title="Desktop — Plasma"] kill; floating enable; border none
 
 # Avoid tiling latte panel components
@@ -54,7 +54,7 @@ font pango:monospace 8
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec kitty
+bindsym $mod+Return exec kitty --single-instance
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -111,8 +111,8 @@ bindsym $mod+a focus parent
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
-set $ws1 "1"
-set $ws2 "2"
+set $ws1 "terminal"
+set $ws2 "firefox"
 set $ws3 "3"
 set $ws4 "4"
 set $ws5 "5"
@@ -151,7 +151,8 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # opens KDE logout confirmation screen
-bindsym $mod+Shift+e exec --no-startup-id qdbus org.kde.ksmserver /KSMServer org.kde.KSMServerInterface.logout -1 -1 -1
+# bindsym $mod+Shift+e exec --no-startup-id qdbus org.kde.ksmserver /KSMServer org.kde.KSMServerInterface.logout -1 -1 -1
+bindsym $mod+Shift+e exec i3-msg exit
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -180,10 +181,7 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-
-# rofi
-bindsym $mod+d exec rofi -show drun
-# bindsym $mod+d exec "qdbus org.kde.kglobalaccel /component/krunner org.kde.kglobalaccel.Component.invokeShortcut 'run command'"
+bindsym $mod+d exec rofi -show drun -location 0 -theme ~/.config/rofi/launchers/simple.rasi
 
 # flash current window
 bindsym $mod+n exec --no-startup-id flash_window
@@ -197,7 +195,7 @@ bindsym $mod+n exec --no-startup-id flash_window
 exec --no-startup-id feh --bg-scale ~/.config/awesome/theme/wallpapers/grindelwald-wallpaper.jpg
 exec --no-startup-id ~/.scripts/feh-blur -b 12 -D 0
 exec --no-startup-id flashfocus
-#exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec --no-startup-id picom
 
 #********************************************************************************
@@ -225,6 +223,20 @@ hide_edge_borders none
 bindsym $mod+y border none
 bindsym $mod+u border pixel 1
 bindsym $mod+i border normal
+
+#############################
+### i3bar                 ###
+#############################
+
+#bar {
+#  status_command i3status --config ~/.config/i3status/config
+#  mode dock
+#  position top
+#  output primary
+#  tray_output primary
+#  font pango:DejaVu Sans Mono 10
+#  separator_symbol “⁞”
+#}
 
 
 #############################

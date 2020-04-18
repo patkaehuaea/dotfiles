@@ -7,3 +7,6 @@
 [submodule "homedir/.config/polybar/modules/polybar-i3-windows"]
 	path = homedir/.config/polybar/modules/polybar-i3-windows
 	url = https://github.com/meelkor/polybar-i3-windows.git
+[submodule ".config/rofi/scripts/rofi-bluetooth"]
+	path = .config/rofi/scripts/rofi-bluetooth
+	url = https://github.com/ClydeDroid/rofi-bluetooth.git

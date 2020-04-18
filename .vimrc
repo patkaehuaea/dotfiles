@@ -207,6 +207,7 @@ au BufRead,BufNewFile *.zcml set filetype=xml
 au BufRead,BufNewFile *.lua set tabstop=2
 au BufRead,BufNewFile *.lua set shiftwidth=2
 au BufRead,BufNewFile *.lua set softtabstop=2
+au BufRead,BufNewFile *.rasi setf css
 au BufRead,BufNewFile *.rb,*.rhtml set tabstop=2
 au BufRead,BufNewFile *.rb,*.rhtml set shiftwidth=2
 au BufRead,BufNewFile *.rb,*.rhtml set softtabstop=2
