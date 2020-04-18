@@ -2,10 +2,8 @@ local awful = require('awful')
 local beautiful = require('beautiful')
 local wibox = require('wibox')
 local gears = require('gears')
-
 local icons = require('theme.icons')
 local dpi = beautiful.xresources.apply_dpi
-
 local clickable_container = require('widget.clickable-container')
 local task_list = require('widget.task-list')
 
@@ -93,54 +91,8 @@ local TopPanel = function(s, offset)
 		)
 	)
 
-
-	local layout_box = function(s)
-		local layoutbox = wibox.widget {
-			{
-				awful.widget.layoutbox(s),
-				margins = dpi(7),
-				widget = wibox.container.margin
-			},
-			widget = clickable_container
-		}
-		layoutbox:buttons(
-			awful.util.table.join(
-				awful.button(
-					{},
-					1,
-					function()
-						awful.layout.inc(1)
-					end
-				),
-				awful.button(
-					{},
-					3,
-					function()
-						awful.layout.inc(-1)
-					end
-				),
-				awful.button(
-					{},
-					4,
-					function()
-						awful.layout.inc(1)
-					end
-				),
-				awful.button(
-					{},
-					5,
-					function()
-						awful.layout.inc(-1)
-					end
-				)
-			)
-		)
-		return layoutbox
-	end
-
-
 	s.clock_widget = wibox.widget.textclock(
-		'<span font="SF Pro Text Bold 11">%l:%M %p</span>',
+		'<span font="SFNS Display Bold 11">%A, %I:%M %p</span>',
 		1
 	)
 
@@ -281,23 +233,12 @@ local TopPanel = function(s, offset)
 		}
 	)
 
-
-	s.systray = wibox.widget {
-		visible = false,
-		base_size = dpi(20),
-		horizontal = true,
-		screen = 'primary',
-		widget = wibox.widget.systray
-	}
-
-
-	s.tray_toggler  = require('widget.tray-toggler')
 	s.updater 		= require('widget.package-updater')()
 	s.screen_rec 	= require('widget.screen-recorder')()
 	s.music       	= require('widget.music')()
 	s.bluetooth   	= require('widget.bluetooth')()
 	s.wifi        	= require('widget.wifi')()
-	s.search      	= require('widget.search-apps')()
+  s.blue_light = require('widget.blue-light')
 
 
 	panel : setup {
@@ -313,18 +254,15 @@ local TopPanel = function(s, offset)
 			layout = wibox.layout.fixed.horizontal,
 			spacing = dpi(5),
 			{
-				s.systray,
 				margins = dpi(5),
 				widget = wibox.container.margin
 			},
-			s.tray_toggler,
+			s.blue_light,
 			s.updater,
 			s.screen_rec,
 			s.music,
 			s.bluetooth,
-			s.wifi,
-			s.search,
-			layout_box(s),
+			s.wifi
 		}
 	}
 
