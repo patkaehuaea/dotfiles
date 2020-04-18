@@ -240,6 +240,7 @@ local TopPanel = function(s, offset)
 	s.bluetooth   	= require('widget.bluetooth')()
 	s.wifi        	= require('widget.wifi')()
   s.blue_light = require('widget.blue-light')
+  s.float_panel  	= require('layout.floating-panel')()
 
 
 	panel : setup {
@@ -250,7 +251,7 @@ local TopPanel = function(s, offset)
 			task_list(s),
 			s.add_button
 		}, 
-		s.clock_widget,
+		s.float_panel,
 		{
 			layout = wibox.layout.fixed.horizontal,
 			spacing = dpi(5),
