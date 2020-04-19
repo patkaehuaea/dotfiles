@@ -34,7 +34,7 @@ theme.icons = theme.dir .. '/icons/'
 
 -- Wallpaper
 
-theme.wallpaper = theme.dir .. '/wallpapers/wallpapersden.com_trip-night_3840x2160.jpg'
+theme.wallpaper = theme.dir .. '/wallpapers/forest.jpg'
 
 -- Foreground
 
