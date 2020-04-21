@@ -152,7 +152,8 @@ ruled.client.append_rule {
 		id         = "file_managers",
 		rule_any   = {  
 			class = {
-				"ranger"
+				"ranger",
+				"thunar"
 			}
 		},
 		properties = { 
