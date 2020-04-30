@@ -56,7 +56,10 @@ vol_osd_slider:connect_signal(
 
 		local volume_level = vol_osd_slider:get_value()
 
-		spawn('amixer -D pulse sset Master ' .. volume_level .. '%', false)
+		spawn('pamixer --sink alsa_output.pci-0000_0b_00.1.hdmi-stereo-extra4 -i ' .. 
+		  volume_level,
+		  false
+		)
 
 		-- Update textbox widget text
 		osd_value.text = volume_level .. '%'

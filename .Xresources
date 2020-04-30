@@ -1,5 +1,15 @@
-## Use to load colorschemes from external files.
-#include ".Xresources.d/nord"
+# Source color settings
+#include ".Xresources.d/gruvbox"
+#include ".Xresources.d/gruvbox-urxvt256"
+
+# Source program settings
+#include ".Xresources.d/urxvt"
 
 ## Set to ~ 120% to increase font size without losing resolution.
-Xft.dpi: 115
+Xft.autohint: 0
+Xft.lcdfilter: lcddefault
+Xft.hintstyle: hintslight
+Xft.hinting: 1
+Xft.antialias: 1
+Xft.rgba: rgb
+Xft.dpi: 125

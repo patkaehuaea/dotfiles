@@ -1,32 +1,3 @@
-# >>> Plasma Integration <<<
-
-# Try to kill the wallpaper set by Plasma (it takes up the entire workspace
-# and hides everythiing)
-exec --no-startup-id wmctrl -c Plasma
-for_window [title="Desktop — Plasma"] kill; floating enable; border none
-
-# Avoid tiling latte panel components
-for_window [title="Latte Dock"] floating enable;
-
-# Avoid tiling popups, dropdown windows from plasma
-for_window [class="plasmashell"] floating enable
-for_window [class="Plasma"] floating enable
-for_window [class="krunner"] floating enable
-for_window [class="Kmix"] floating enable
-for_window [class="Klipper"] floating enable
-for_window [class="Plasmoidviewer"] floating enable
-
-# >>> Window Rules <<<
-
-# >>> Avoid tiling for non-Plasma stuff <<<
-for_window [window_role="pop-up"] floating enable
-for_window [window_role="bubble"] floating enable
-for_window [window_role="task_dialog"] floating enable
-for_window [window_role="Preferences"] floating enable
-for_window [window_role="About"] floating enable 
-for_window [window_type="dialog"] floating enable
-for_window [window_type="menu"] floating enable
-
 #****************************************************************************
 
 #	Keybinds
@@ -54,7 +25,7 @@ font pango:monospace 8
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec kitty --single-instance
+bindsym $mod+Return exec alacritty
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -111,8 +82,8 @@ bindsym $mod+a focus parent
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
-set $ws1 "terminal"
-set $ws2 "firefox"
+set $ws1 "1"
+set $ws2 "2"
 set $ws3 "3"
 set $ws4 "4"
 set $ws5 "5"
@@ -121,6 +92,10 @@ set $ws7 "7"
 set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10"
+
+assign [class="kitty"] $ws1
+assign [class="Alacritty"] $ws1
+assign [class="firefox"] $ws2
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
@@ -192,10 +167,14 @@ bindsym $mod+n exec --no-startup-id flash_window
 
 #********************************************************************************
 
-exec --no-startup-id feh --bg-scale ~/.config/awesome/theme/wallpapers/grindelwald-wallpaper.jpg
+exec --no-startup-id feh --bg-scale ~/Pictures/Wallpapers/cappadocia.jpg
 exec --no-startup-id ~/.scripts/feh-blur -b 12 -D 0
 exec --no-startup-id flashfocus
+exec_always --no-startup-id /usr/bin/pamac-tray
+exec_always --no-startup-id /usr/bin/blueman-tray
+exec_always --no-startup-id /usr/bin/nm-applet
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+exec_always --no-startup-id /usr/bin/redshift
 exec --no-startup-id picom
 
 #********************************************************************************
@@ -204,13 +183,47 @@ exec --no-startup-id picom
 
 #********************************************************************************
 
+# ~/.Xresources include - gruvbox
+set_from_resource $fg foreground #ebdbb2
+set_from_resource $bg background #282828
+set_from_resource $black color0 #282828
+set_from_resource $darkgray color8 #928374
+set_from_resource $darkred color1 #cc241d
+set_from_resource $red color9
+set_from_resource $darkgreen color2
+set_from_resource $red color10
+set_from_resource $darkyellow color3
+set_from_resource $yellow color11
+set_from_resource $darkblue color4
+set_from_resource $blue color12
+set_from_resource $darkmagenta color5
+set_from_resource $magenta color13
+set_from_resource $darkcyan color6
+set_from_resource $cyan color14
+set_from_resource $lightgray color7
+set_from_resource $white color15
+
+# green gruvbox
+# class                 border|backgr|text|indicator|child_border
+#client.focused          $green $green $darkgray $purple $darkgray
+#client.focused_inactive $darkgray $darkgray $yellow $purple $darkgray
+#client.unfocused        $darkgray $darkgray $yellow $purple $darkgray
+#client.urgent           $red $red $white $red $red
+
+# blue gruvbox
+# class                 border|backgr|text|indicator|child_border
+client.focused          $blue $blue $darkgray $darkmagenta $darkgray
+client.focused_inactive $darkgray $darkgray $yellow $darkmagenta $darkgray
+client.unfocused        $darkgray $darkgray $yellow $darkmagenta $darkgray
+client.urgent           $red $red $white $red $red
+
 # Theme colors
-# class                   border  backgr. text    indic.   child_border
-client.focused          #4c7899 #285577 #ffffff #2e9ef4   #285577
-client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
-client.unfocused        #333333 #222222 #888888 #292d2e   #222222
-client.urgent           #2f343a #900000 #ffffff #900000   #900000
-client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
+## class                   border  backgr. text    indic.   child_border
+#client.focused          #4c7899 #285577 #ffffff #2e9ef4   #285577
+#client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
+#client.unfocused        #333333 #222222 #888888 #292d2e   #222222
+#client.urgent           #2f343a #900000 #ffffff #900000   #900000
+#client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 
 # Configure border style <normal|1pixel|pixel xx|none|pixel>
 new_window none
@@ -223,21 +236,6 @@ hide_edge_borders none
 bindsym $mod+y border none
 bindsym $mod+u border pixel 1
 bindsym $mod+i border normal
-
-#############################
-### i3bar                 ###
-#############################
-
-#bar {
-#  status_command i3status --config ~/.config/i3status/config
-#  mode dock
-#  position top
-#  output primary
-#  tray_output primary
-#  font pango:DejaVu Sans Mono 10
-#  separator_symbol “⁞”
-#}
-
 
 #############################
 ### settings for i3-gaps: ###

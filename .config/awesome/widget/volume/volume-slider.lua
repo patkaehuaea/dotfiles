@@ -39,8 +39,9 @@ volume_slider:connect_signal(
 
 		local volume_level = volume_slider:get_value()
 		
-		spawn('amixer -D pulse sset Master ' .. 
-			volume_level .. '%',
+		print("volume-slider.lua called")
+		spawn('pamixer --sink alsa_output.pci-0000_0b_00.1.hdmi-stereo-extra4 -i ' .. 
+			volume_level,
 			false
 		)
 
@@ -60,6 +61,7 @@ volume_slider:buttons(
 			4,
 			nil,
 			function()
+			  print("volume_slider > 100" .. volume_slider:get_value())
 				if volume_slider:get_value() > 100 then
 					volume_slider:set_value(100)
 					return
@@ -72,6 +74,7 @@ volume_slider:buttons(
 			5,
 			nil,
 			function()
+			  print("volume_slider < 100" .. volume_slider:get_value())
 				if volume_slider:get_value() < 0 then
 					volume_slider:set_value(0)
 					return
@@ -82,13 +85,12 @@ volume_slider:buttons(
 	)
 )
 
-
 local update_slider = function()
 	awful.spawn.easy_async_with_shell(
-		[[bash -c "amixer -D pulse sget Master"]],
+		[[bash -c "pamixer --sink alsa_output.pci-0000_0b_00.1.hdmi-stereo-extra4 --get-volume"]],
 		function(stdout)
-
-			local volume = string.match(stdout, '(%d?%d?%d)%%')
+			local volume = string.match(stdout, '%d?%d?%d?')
+			print("--get-volume:" .. volume)
 
 			volume_slider:set_value(tonumber(volume))
 		end
