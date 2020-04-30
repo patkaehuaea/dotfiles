@@ -170,11 +170,11 @@ bindsym $mod+n exec --no-startup-id flash_window
 exec --no-startup-id feh --bg-scale ~/Pictures/Wallpapers/cappadocia.jpg
 exec --no-startup-id ~/.scripts/feh-blur -b 12 -D 0
 exec --no-startup-id flashfocus
-exec_always --no-startup-id /usr/bin/pamac-tray
-exec_always --no-startup-id /usr/bin/blueman-tray
-exec_always --no-startup-id /usr/bin/nm-applet
+exec --no-startup-id /usr/bin/pamac-tray
+exec --no-startup-id /usr/bin/blueman-tray
+exec --no-startup-id /usr/bin/nm-applet
+exec --no-startup-id /usr/bin/redshift
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
-exec_always --no-startup-id /usr/bin/redshift
 exec --no-startup-id picom
 
 #********************************************************************************
@@ -242,9 +242,9 @@ bindsym $mod+i border normal
 #############################
 
 # Set inner/outer gaps
-gaps vertical 10
-gaps horizontal 10
-gaps inner 10
+gaps vertical 5
+gaps horizontal 5
+gaps inner 5
 gaps outer 5
 
 # Activate smart borders (always)
