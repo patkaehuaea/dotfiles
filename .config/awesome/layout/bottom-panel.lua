@@ -26,17 +26,17 @@ local bottom_panel = function(s)
 		}
 	end
 
---s.systray = wibox.widget {
---	{
---		base_size = dpi(20),
---		horizontal = true,
---		screen = 'primary',
---		widget = wibox.widget.systray
---	},
---	visible = false,
---	top = dpi(14),
---	widget = wibox.container.margin
---}
+s.systray = wibox.widget {
+	{
+		base_size = dpi(20),
+		horizontal = true,
+		screen = 'primary',
+		widget = wibox.widget.systray
+	},
+	visible = false,
+	top = dpi(14),
+	widget = wibox.container.margin
+}
 
 	s.tray_toggler  = build_widget(require('widget.tray-toggler'))
 	s.search      	= require('widget.search-apps')()
