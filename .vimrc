@@ -71,7 +71,7 @@ call plug#end()
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Set colorscheme after installing plugins to prevent
 " 'colorscheme not found' error.
-colorscheme gruvbox
+colorscheme nord
 " Active Cursor Line Number Background
 let g:nord_cursor_line_number_background = 1
 syntax on " syntax highlighting on
