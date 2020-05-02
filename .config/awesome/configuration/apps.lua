@@ -7,7 +7,7 @@ local bin_dir = config_dir .. 'binaries/'
 return {
 	-- The default applications in keybindings and widgets
 	default = {
-		terminal 										= 'kitty',                                  -- Terminal Emulator
+		terminal 										= 'alacritty',                                  -- Terminal Emulator
 		text_editor 									= 'vim',                                  -- GUI Text Editor
 		web_browser 									= 'firefox',                                -- Web browser
 		file_manager 									= 'ranger',                                -- GUI File manager
