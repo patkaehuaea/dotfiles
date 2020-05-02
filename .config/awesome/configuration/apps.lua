@@ -26,8 +26,7 @@ return {
 	},
 	
 	run_on_start_up = {
-		'picom -b --experimental-backends --dbus --config ' .. 
-		config_dir .. '/configuration/picom.conf',   												-- Compositor
+		'picom -b --experimental-backends --dbus --config ~/.config/picom.conf',
 		'blueman-applet',                                                                           -- Bluetooth tray icon
 		'xrdb $HOME/.Xresources',                                                                   -- Load X Colors
 		'nm-applet',                                                                                -- NetworkManager Applet
