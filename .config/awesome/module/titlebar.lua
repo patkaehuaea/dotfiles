@@ -214,17 +214,11 @@ wibox.widget {
 		-- Isn't it neat? lol
 		decorate_titlebar(c, 'top', beautiful.gtk.get_theme_variables().bg_color:sub(1,7) .. '66', titlebar_size)
 	
-	elseif c.class == "konsole" then
-
-		decorate_titlebar(c, 'top', '#000000AA', titlebar_size)
-
-	elseif c.class == 'XTerm' or c.class == 'UXTerm' then
-
+	elseif c.class == 'Alacritty' then
 		-- Let's use the xresources' background color as the titlebar color for xterm
-		-- awesome is the shit boi!
 		decorate_titlebar(c, 'top', beautiful.xresources.get_current_theme().background, titlebar_size)
 
-	elseif c.class == 'Dolphin' then
+	elseif c.class == 'Thunar' then
 
 		decorate_titlebar(c, 'top', beautiful.background, titlebar_size)
 
