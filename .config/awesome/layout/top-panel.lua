@@ -37,6 +37,49 @@ local TopPanel = function(s, offset)
 		top = dpi(28)
 	}
 
+	local layout_box = function(s)
+		local layoutbox = wibox.widget {
+			{
+				awful.widget.layoutbox(s),
+				margins = dpi(7),
+				widget = wibox.container.margin
+			},
+			widget = clickable_container
+		}
+		layoutbox:buttons(
+			awful.util.table.join(
+				awful.button(
+					{},
+					1,
+					function()
+						awful.layout.inc(1)
+					end
+				),
+				awful.button(
+					{},
+					3,
+					function()
+						awful.layout.inc(-1)
+					end
+				),
+				awful.button(
+					{},
+					4,
+					function()
+						awful.layout.inc(1)
+					end
+				),
+				awful.button(
+					{},
+					5,
+					function()
+						awful.layout.inc(-1)
+					end
+				)
+			)
+		)
+		return layoutbox
+	end
 
 	panel:connect_signal(
 		'mouse::enter',
@@ -241,6 +284,7 @@ local TopPanel = function(s, offset)
 	s.wifi        	= require('widget.wifi')()
   s.blue_light = require('widget.blue-light')
   s.float_panel  	= require('layout.floating-panel')()
+  s.r_dashboard 	= require('layout.right-panel.right-panel-opener')()
 
 
 	panel : setup {
@@ -251,7 +295,7 @@ local TopPanel = function(s, offset)
 			task_list(s),
 			s.add_button
 		}, 
-		s.float_panel,
+		s.clock_widget,
 		{
 			layout = wibox.layout.fixed.horizontal,
 			spacing = dpi(5),
@@ -265,7 +309,9 @@ local TopPanel = function(s, offset)
 			s.music,
 			s.bluetooth,
 			s.wifi,
-			s.end_session
+			s.end_session,
+--			layout_box(s),
+			s.r_dashboard
 		}
 	}
 

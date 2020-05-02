@@ -1,7 +1,7 @@
 local awful = require('awful')
 local top_panel = require('layout.top-panel')
 local bottom_panel = require('layout.bottom-panel')
-local right_panel = require('layout.floating-panel.floating-panel')
+local right_panel = require('layout.right-panel')
 
 
 -- Create a wibox panel for each screen and add it
