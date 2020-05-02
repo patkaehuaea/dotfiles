@@ -109,13 +109,11 @@ ruled.client.append_rule {
 	id         = "terminals",
 	rule_any   = { 
 		class = { 
-			"alacritty"
+			"Alacritty"
 		},
 	},
 	properties = {
 		tag = '1',
-		titlebars_enabled = false,
-		hide_titlebars = true,
 		switchtotag = true,
 		draw_backdrop = false,
 		size_hints_honor = false
