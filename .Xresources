@@ -1,9 +1,5 @@
 # Source color settings
-#include ".Xresources.d/gruvbox"
-#include ".Xresources.d/gruvbox-urxvt256"
-
-# Source program settings
-#include ".Xresources.d/urxvt"
+#include ".Xresources.d/nord"
 
 ## Set to ~ 120% to increase font size without losing resolution.
 Xft.autohint: 0
