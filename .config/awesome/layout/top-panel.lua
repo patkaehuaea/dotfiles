@@ -310,7 +310,7 @@ local TopPanel = function(s, offset)
 			s.bluetooth,
 			s.wifi,
 			s.end_session,
---			layout_box(s),
+			layout_box(s),
 			s.r_dashboard
 		}
 	}

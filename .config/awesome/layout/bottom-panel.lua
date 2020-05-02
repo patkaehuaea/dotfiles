@@ -10,50 +10,6 @@ local tag_list = require('widget.tag-list')
 
 local bottom_panel = function(s)
 
-	local layout_box = function(s)
-		local layoutbox = wibox.widget {
-			{
-				awful.widget.layoutbox(s),
-				margins = dpi(7),
-				widget = wibox.container.margin
-			},
-			widget = clickable_container
-		}
-		layoutbox:buttons(
-			awful.util.table.join(
-				awful.button(
-					{},
-					1,
-					function()
-						awful.layout.inc(1)
-					end
-				),
-				awful.button(
-					{},
-					3,
-					function()
-						awful.layout.inc(-1)
-					end
-				),
-				awful.button(
-					{},
-					4,
-					function()
-						awful.layout.inc(1)
-					end
-				),
- 				awful.button(
- 					{},
- 					5,
- 					function()
- 						awful.layout.inc(-1)
- 					end
- 				)
-		)
-	)
-		return layoutbox
-	end
-
 	local build_widget = function(widget)
 		return wibox.widget {
 			{
@@ -70,17 +26,17 @@ local bottom_panel = function(s)
 		}
 	end
 
-s.systray = wibox.widget {
-	{
-		base_size = dpi(20),
-		horizontal = true,
-		screen = 'primary',
-		widget = wibox.widget.systray
-	},
-	visible = false,
-	top = dpi(14),
-	widget = wibox.container.margin
-}
+--s.systray = wibox.widget {
+--	{
+--		base_size = dpi(20),
+--		horizontal = true,
+--		screen = 'primary',
+--		widget = wibox.widget.systray
+--	},
+--	visible = false,
+--	top = dpi(14),
+--	widget = wibox.container.margin
+--}
 
 	s.tray_toggler  = build_widget(require('widget.tray-toggler'))
 	s.search      	= require('widget.search-apps')()
@@ -107,7 +63,6 @@ s.systray = wibox.widget {
 				{
 					s.systray,
 					s.tray_toggler,
-					build_widget(layout_box(s)),
 					separator,
 					spacing = dpi(10),
 					layout = wibox.layout.fixed.horizontal
