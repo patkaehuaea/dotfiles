@@ -208,27 +208,30 @@ local globalKeys = awful.util.table.join(
         {},
         'XF86AudioRaiseVolume',
         function()
-            awful.spawn('pactl set-sink-volume 0 +5%', false)
+            awful.spawn('pamixer -u', false)
+            -- pamixer is awesome and will prevent increase > 100
+            awful.spawn('pamixer -i 5', false)
             awesome.emit_signal('widget::volume')
             awesome.emit_signal('module::volume_osd:show', true)
         end,
-        {description = 'increase volume up by 5%', group = 'hotkeys'}
+        {description = 'increase volume by 5%', group = 'hotkeys'}
     ),
     awful.key(
         {},
         'XF86AudioLowerVolume',
         function()
-            awful.spawn('pactl set-sink-volume 0 -5%', false)
+            awful.spawn('pamixer -u', false)
+            awful.spawn('pamixer -d 5', false)
             awesome.emit_signal('widget::volume')
             awesome.emit_signal('module::volume_osd:show', true)
         end,
-        {description = 'decrease volume up by 5%', group = 'hotkeys'}
+        {description = 'decrease volume by 5%', group = 'hotkeys'}
     ),
     awful.key(
         {},
         'XF86AudioMute',
         function()
-            awful.spawn('pactl set-sink-mute 0 toggle', false)
+            awful.spawn('pamixer -t', false)
         end,
         {description = 'toggle mute', group = 'hotkeys'}
     ),
