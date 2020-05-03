@@ -1,4 +1,4 @@
-# Source color settings
+## Source color settings
 #include ".Xresources.d/nord"
 
 ## Set to ~ 120% to increase font size without losing resolution.
