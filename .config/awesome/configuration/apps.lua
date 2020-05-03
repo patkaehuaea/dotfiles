@@ -26,13 +26,15 @@ return {
 	},
 	
 	run_on_start_up = {
-		'picom -b --experimental-backends --dbus --config ~/.config/picom.conf',
-		'blueman-applet',                                                                           -- Bluetooth tray icon
 		'xrdb $HOME/.Xresources',                                                                   -- Load X Colors
+		'xfce4-clipman',
+	  'xfce4-power-manager',
+	  'xfce4-screensaver --no-daemon',
+		'blueman-applet',                                                                           -- Bluetooth tray icon
 		'nm-applet',                                                                                -- NetworkManager Applet
-		'pulseeffects --gapplication-service',                                                      -- Sound Equalizer
---		'xidlehook --not-when-fullscreen --not-when-audio --timer 600 '..
---		' "awesome-client \'_G.show_lockscreen()\'" ""'  											-- Auto lock timer
+		'pasystray',
+		'xrdb $HOME/.Xresources',                                                                   -- Load X Colors
+		'picom -b --experimental-backends --dbus --config ~/.config/picom.conf',
 	},
 
 	-- List of binaries that will execute a certain task
