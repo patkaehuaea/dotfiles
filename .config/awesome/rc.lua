@@ -59,6 +59,7 @@ root.keys(require('configuration.keys.global'))
 --	     	Remove unwanted layouts from default
 --  ========================================
 
+awful.layout.remove_default_layout(awful.layout.suit.floating)
 awful.layout.remove_default_layout(awful.layout.suit.tile.left)
 awful.layout.remove_default_layout(awful.layout.suit.tile.bottom)
 awful.layout.remove_default_layout(awful.layout.suit.tile.top)
@@ -72,10 +73,10 @@ awful.layout.remove_default_layout(awful.layout.suit.corner.nw)
 awful.layout.remove_default_layout(awful.layout.suit.corner.ne)
 awful.layout.remove_default_layout(awful.layout.suit.corner.sw)
 awful.layout.remove_default_layout(awful.layout.suit.corner.se)
---awful.layout.append_default_layout(lain.layout.centerwork)
---awful.layout.append_default_layout(lain.layout.termfair.center)
---lain.layout.termfair.center.nmaster = 3
---lain.layout.termfair.center.ncol    = 1
+awful.layout.append_default_layout(lain.layout.centerwork)
+awful.layout.append_default_layout(lain.layout.termfair.center)
+lain.layout.termfair.center.nmaster = 3
+lain.layout.termfair.center.ncol    = 1
 
 --  ========================================
 -- 					Signals

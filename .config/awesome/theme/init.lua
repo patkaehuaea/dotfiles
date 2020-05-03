@@ -5,7 +5,6 @@ local filesystem = require('gears.filesystem')
 local dpi = beautiful.xresources.apply_dpi
 
 local theme_dir = filesystem.get_configuration_dir() .. '/theme'
-local lain_icon_dir = filesystem.get_configuration_dir() .. '/lain/icons/layout/default'
 local titlebar_theme = "stoplight"
 local titlebar_icon_path = theme_dir .. "/icons/titlebar/" .. titlebar_theme .. '/'
 local tip = titlebar_icon_path
@@ -14,8 +13,7 @@ local xrdb = beautiful.xresources.get_current_theme()
 
 local theme = {}
 theme.icons = theme_dir .. '/icons/'
-theme.lain_icons         = os.getenv("HOME") ..
-                           "/.config/awesome/lain/icons/layout/default/"
+theme.lain_icons = os.getenv("HOME") .. "/.config/awesome/lain/icons/layout/default/"
 
 -- Transfer from floppy init.lua
 
@@ -176,6 +174,7 @@ theme.separator_color = '#f2f2f244'
 
 -- Layoutbox icons
 
+
 theme.layout_fairh = theme.icons.."layouts/fairhw.png"
 theme.layout_fairv = theme.icons.."layouts/fairvw.png"
 theme.layout_floating  = theme.icons.."layouts/floatingw.png"
@@ -192,13 +191,14 @@ theme.layout_cornernw = theme.icons.."layouts/cornernww.png"
 theme.layout_cornerne = theme.icons.."layouts/cornernew.png"
 theme.layout_cornersw = theme.icons.."layouts/cornersww.png"
 theme.layout_cornerse = theme.icons.."layouts/cornersew.png"
+
+-- Lain Layoutbox icons
 theme.layout_termfair    = theme.lain_icons .. "termfair.png"
-theme.layout_centerfair  = theme.lain_icons .. "centerfair.png"  -- termfair.center
+theme.layout_centerfair  = theme.lain_icons .. "centerfairw.png"  -- termfair.center
 theme.layout_cascade     = theme.lain_icons .. "cascade.png"
 theme.layout_cascadetile = theme.lain_icons .. "cascadetile.png" -- cascade.tile
-theme.layout_centerwork  = theme.lain_icons .. "centerwork.png"
+theme.layout_centerwork  = theme.lain_icons .. "centerworkw.png"
 theme.layout_centerworkh = theme.lain_icons .. "centerworkh.png" -- centerwork.horizontal
-
 	-- Taglist
 
 	theme.taglist_bg_empty = theme.background .. '99'
