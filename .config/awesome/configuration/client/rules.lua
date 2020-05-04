@@ -113,7 +113,7 @@ ruled.client.append_rule {
 		},
 	},
 	properties = {
-		tag = '1',
+		tag =   '',
 		switchtotag = true,
 		draw_backdrop = false,
 		size_hints_honor = false
@@ -122,107 +122,64 @@ ruled.client.append_rule {
 
 -- Browsers
 ruled.client.append_rule {
-	id         = "web_browsers",
+	id         = "web",
 	rule_any   = { 
 		class = {
 			"firefox"
 		}
 	},
 	properties = { 
-		tag = '2'
+		tag =  ''
 	}
 }
-
-	-- IDEs and Tools
-	ruled.client.append_rule {
-		id         = "ide",
-		rule_any   = {  
-			class = {
-				"jetbrains-studio"
-			}
-		},
-		properties = { 
-			tag = '3',
-			skip_decoration = true
-		}
-	}
-
 	-- File managers
 	ruled.client.append_rule {
-		id         = "file_managers",
-		rule_any   = {  
+		id         = 'messaging',
+		rule_any   = {
 			class = {
-				"ranger",
-				"thunar"
+				"Slack",
+				"slack"
 			}
 		},
 		properties = { 
-			tag = '4',
+			tag =  '',
 			switchtotag = true
 		}
 	}
 
 	-- Multimedia
 	ruled.client.append_rule {
-		id         = "multimedia",
-		rule_any   = {  
+		id         = "media",
+		rule_any   = {
 			class = {
 				"vlc",
 				"Spotify"
 			}
 		},
-		properties = { 
-			tag = '5',
+		properties = {
+			tag =  '',
 			draw_backdrop = false
 		}
 	}
 
-	-- Gaming
 	ruled.client.append_rule {
-		id         = "gaming",
-		rule_any   = {  
+		id         = "sandbox",
+		rule_any   = {
 			class = {
-				"Wine",
-				"Steam"
+				"Gimp-2.10",
+				"Steam",
+				"VirtualBox Manage",
+				"VirtualBox Machine",
+				"Wine"
 			},
-		name = { "Steam" }
 		},
-		properties = { 
-			tag = '6',
+		properties = {
+			tag =  '',
 			skip_decoration = true,
 			draw_backdrop = false,
 			switchtotag = true,
 			floating = true,
 			hide_titlebars = true
-		}
-	}
-
-	-- Graphics Editing
-	ruled.client.append_rule {
-		id         = "graphics_editors",
-		rule_any   = {  
-			class = {
-				"Gimp-2.10",
-				"Inkscape",
-				"Flowblade"
-			}
-		},
-		properties = { 
-			tag = '7'
-		}
-	}
-
-	-- Sandboxes
-	ruled.client.append_rule {
-		id         = "sandbox",
-		rule_any   = {  
-			class = {
-				"VirtualBox Manage",
-				"VirtualBox Machine"
-			}
-		},
-		properties = { 
-			tag = '8'
 		}
 	}
 
@@ -249,6 +206,7 @@ ruled.client.append_rule {
 			instance    = {
 				"file_progress",
 				"Popup",
+				"VirtualBox Machine",
 				"nm-connection-editor"
 			},
 		},

@@ -6,43 +6,43 @@ local icons = require('theme.icons')
 
 local tags = {
 	{
+		name = '',
+--		name = '',
 		icon = icons.terminal,
+		layout = awful.layout.suit.tile,
 		type = 'terminal',
-		defaultApp = 'vim',
+		defaultApp = 'Alacritty',
 		screen = 1
 	},
 	{
+		name = '',
 		icon = icons.web_browser,
-		type = 'chrome',
+		layout = awful.layout.suit.tile,
+		-- Don't think we need type.
+		type = 'firefox',
 		defaultApp = 'firefox',
 		screen = 1
 	},
 	{
-		icon = icons.development,
-		type = 'code',
-		defaultApp = '',
-		screen = 1
-	},
-	{
+	  name = '',
 		icon = icons.file_manager,
-		type = 'files',
-		defaultApp = 'ranger',
+		layout = awful.layout.suit.tile,
+		type = 'messaging',
+		defaultApp = 'slack',
 		screen = 1
 	},
 	{
+	  name = '',
 		icon = icons.multimedia,
-		type = 'music',
-		defaultApp = 'vlc',
+		layout = awful.layout.suit.tile,
+		type = 'media',
+		defaultApp = 'Spotify',
 		screen = 1
 	},
 	{
-		icon = icons.games,
-		type = 'game',
-		defaultApp = 'steam',
-		screen = 1
-	},
-	{
+		name = '',
 		icon = icons.sandbox,
+		layout = awful.layout.suit.floating,
 		type = 'virtualbox',
 		defaultApp = 'virtualbox',
 		screen = 1
@@ -58,11 +58,11 @@ tag.connect_signal(
 screen.connect_signal("request::desktop_decoration", function(s)
 	for i, tag in pairs(tags) do
 		awful.tag.add(
-			i,
+			tag.name,
 			{
-				icon = tag.icon,
-				icon_only = true,
-				layout = awful.layout.suit.fair,
+--        icon = tag.icon,
+--   		  icon_only = true,
+				layout = tag.layout,
 				gap_single_client = false,
 				gap = beautiful.useless_gap,
 				screen = s,
@@ -72,7 +72,6 @@ screen.connect_signal("request::desktop_decoration", function(s)
 		)
 	end
 end)
-
 
 tag.connect_signal(
 	'property::layout',

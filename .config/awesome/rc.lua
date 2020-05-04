@@ -59,7 +59,7 @@ root.keys(require('configuration.keys.global'))
 --	     	Remove unwanted layouts from default
 --  ========================================
 
-awful.layout.remove_default_layout(awful.layout.suit.floating)
+--awful.layout.remove_default_layout(awful.layout.suit.floating)
 awful.layout.remove_default_layout(awful.layout.suit.tile.left)
 awful.layout.remove_default_layout(awful.layout.suit.tile.bottom)
 awful.layout.remove_default_layout(awful.layout.suit.tile.top)

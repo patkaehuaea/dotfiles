@@ -5,9 +5,8 @@ local gears = require('gears')
 local icons = require('theme.icons')
 local dpi = beautiful.xresources.apply_dpi
 local clickable_container = require('widget.clickable-container')
+--local tag_list = require('widget.tag-list')
 local task_list = require('widget.task-list')
-
-
 
 local TopPanel = function(s, offset)
 
@@ -286,12 +285,24 @@ local TopPanel = function(s, offset)
   s.float_panel  	= require('layout.floating-panel')()
   s.r_dashboard 	= require('layout.right-panel.right-panel-opener')()
 
+--  awful.util.tagnames   = { '', '', '', '', '', '' }
+--  awful.tag(awful.util.tagnames, s, awful.layout.layouts)
+  s.mytaglist = awful.widget.taglist {
+    screen = s, 
+    filter = awful.widget.taglist.filter.all,
+    style = {
+		  font = 'SFNS Display 12'
+    },
+    buttons = awful.util.taglist_buttons
+  }
 
 	panel : setup {
 		layout = wibox.layout.align.horizontal,
 		expand = "none",
 		{
 			layout = wibox.layout.fixed.horizontal,
+		s.mytaglist,
+      --tag_list(s),
 			task_list(s),
 			s.add_button
 		}, 
@@ -306,7 +317,7 @@ local TopPanel = function(s, offset)
 			s.blue_light,
 			s.updater,
 			s.screen_rec,
-			s.music,
+--			s.music,
 			s.bluetooth,
 			s.wifi,
 			s.end_session,

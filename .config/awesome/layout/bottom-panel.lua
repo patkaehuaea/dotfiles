@@ -6,7 +6,7 @@ local beautiful = require('beautiful')
 local dpi = beautiful.xresources.apply_dpi
 local clickable_container = require('widget.clickable-container')
 
-local tag_list = require('widget.tag-list')
+--local tag_list = require('widget.tag-list')
 
 local bottom_panel = function(s)
 
@@ -58,7 +58,7 @@ s.systray = wibox.widget {
 				layout = wibox.layout.fixed.horizontal,
 				s.search,
 				separator,
-				tag_list(s),
+        tag_list(s),
 				require('widget.xdg-folders'),
 				{
 					s.systray,

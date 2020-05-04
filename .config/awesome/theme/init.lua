@@ -204,7 +204,10 @@ theme.layout_centerworkh = theme.lain_icons .. "centerworkh.png" -- centerwork.h
 	theme.taglist_bg_empty = theme.background .. '99'
 	theme.taglist_bg_occupied =  '#ffffff' .. '1A'
 	theme.taglist_bg_urgent = "#E91E63" .. '99'
-	theme.taglist_bg_focus = theme.background
+	-- default below
+	--theme.taglist_bg_focus = theme.background
+--nord14 - light green
+	theme.taglist_bg_focus =  '#A3BE8C'
 	theme.taglist_spacing = dpi(0)
 
 	-- Tasklist

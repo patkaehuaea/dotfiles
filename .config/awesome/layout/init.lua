@@ -1,13 +1,11 @@
 local awful = require('awful')
 local top_panel = require('layout.top-panel')
-local bottom_panel = require('layout.bottom-panel')
 local right_panel = require('layout.right-panel')
 
 
 -- Create a wibox panel for each screen and add it
 screen.connect_signal("request::desktop_decoration", function(s)
 	s.top_panel = top_panel(s, false)
-	s.bottom_panel = bottom_panel(s)
 	s.right_panel = right_panel(s)
 	s.right_panel_show_again = false
 end)
@@ -21,7 +19,6 @@ function updateBarsVisibility()
 			local fullscreen = s.selected_tag.fullscreenMode
 			-- Order matter here for shadow
 			s.top_panel.visible = not fullscreen
-			s.bottom_panel.visible = not fullscreen
 			if s.right_panel then
 				if fullscreen and focused.right_panel.visible then
 					focused.right_panel:toggle()
