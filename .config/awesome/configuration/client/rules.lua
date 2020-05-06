@@ -137,8 +137,12 @@ ruled.client.append_rule {
 		id         = 'messaging',
 		rule_any   = {
 			class = {
-				"Slack",
-				"slack"
+				"microsoft teams - preview",
+				"Microsoft Teams - Preview",
+				"signal",
+				"Signal",
+				"slack",
+				"Slack"
 			}
 		},
 		properties = { 
@@ -206,6 +210,7 @@ ruled.client.append_rule {
 			instance    = {
 				"file_progress",
 				"Popup",
+				"VirualBox Manage",
 				"VirtualBox Machine",
 				"nm-connection-editor"
 			},
