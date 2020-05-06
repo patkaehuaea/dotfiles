@@ -24,13 +24,4 @@ source $ZSH/oh-my-zsh.sh
 # Enable shell command correction via: https://github.com/nvbn/thefuck
 eval $(thefuck --alias)
 
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-
-# Customize to your needs...
 unsetopt correct
-
-# TODO: Remove as soon as I have an arch specific ~/.shellalias
-# file and source appropriately.
-#ref: https://superuser.com/questions/395820/how-to-properly-end-a-kde-session-from-shell-without-root-privileges
-alias logout="qdbus org.kde.ksmserver /KSMServer logout 0 0 0"
-alias afk="loginctl lock-session `loginctl show-user pat | grep Sessions | cut -d'=' -f2`"
