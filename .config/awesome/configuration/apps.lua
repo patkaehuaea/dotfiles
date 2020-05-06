@@ -26,15 +26,17 @@ return {
 	},
 	
 	run_on_start_up = {
-		'xrdb $HOME/.Xresources',                                                                   -- Load X Colors
+		'blueman-applet', -- bluetooth tray icon
+		'firefox', -- firefox web browser
+		'nm-applet', -- network manager applet
+		'pasystray', -- pulseaudio system tray utility
+		'picom -b --experimental-backends --dbus --config ~/.config/picom.conf',
+		'slack', -- Slack messaging
+		'teams', -- Microsoft Teams messaging
 		'xfce4-clipman',
 	  'xfce4-power-manager',
 	  'xfce4-screensaver --no-daemon',
-		'blueman-applet',                                                                           -- Bluetooth tray icon
-		'nm-applet',                                                                                -- NetworkManager Applet
-		'pasystray',
-		'xrdb $HOME/.Xresources',                                                                   -- Load X Colors
-		'picom -b --experimental-backends --dbus --config ~/.config/picom.conf',
+		'xrdb $HOME/.Xresources', -- X windows config and settings
 	},
 
 	-- List of binaries that will execute a certain task
