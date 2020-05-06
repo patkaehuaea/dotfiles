@@ -1,0 +1,2 @@
+source ~/.shellaliases
+source ~/.shellfn

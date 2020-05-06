@@ -25,6 +25,3 @@ source $ZSH/oh-my-zsh.sh
 eval $(thefuck --alias)
 
 unsetopt correct
-
-source $HOME/.shellpaths
-source $HOME/.shellvars
