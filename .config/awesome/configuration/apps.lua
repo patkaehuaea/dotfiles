@@ -32,7 +32,7 @@ return {
 		'pasystray', -- pulseaudio system tray utility
 		'picom -b --experimental-backends --dbus --config ~/.config/picom.conf',
 		'redshift', -- filter blue light
-		'signal', -- Slack messaging
+		'signal-desktop', -- Slack messaging
 		'slack', -- Slack messaging
 		'teams', -- Microsoft Teams messaging
 		'xfce4-clipman',
