@@ -179,11 +179,7 @@ ruled.client.append_rule {
 		},
 		properties = {
 			tag =  '',
-			skip_decoration = true,
-			draw_backdrop = false,
-			switchtotag = true,
 			floating = true,
-			hide_titlebars = true
 		}
 	}
 
@@ -210,7 +206,7 @@ ruled.client.append_rule {
 			instance    = {
 				"file_progress",
 				"Popup",
-				"VirualBox Manage",
+				"VirtualBox Manage",
 				"VirtualBox Machine",
 				"nm-connection-editor"
 			},
