@@ -1,7 +1,33 @@
+# vim: filetype=i3config
+
+#****************************************************************************
+#	Plasma
 #****************************************************************************
 
-#	Keybinds
+for_window [window_role="pop-up"] floating enable
+for_window [window_role="task_dialog"] floating enable
+# Prevents dolphin launching to black screen
+for_window [window_role="dolphin"] floating enable
+for_window [class="yakuake"] floating enable
+for_window [class="systemsettings"] floating enable
+for_window [class="plasmashell"] floating enable;
+for_window [class="Plasma"] floating enable; border none
+for_window [title="plasma-desktop"] floating enable; border none
+for_window [title="win7"] floating enable; border none
+for_window [class="krunner"] floating enable; border none
+for_window [class="Kmix"] floating enable; border none
+for_window [class="Klipper"] floating enable; border none
+for_window [class="Plasmoidviewer"] floating enable; border none
+for_window [class="(?i)*nextcloud*"] floating disable
+for_window [class="plasmashell" window_type="notification"] border none, move right 700px, move down 450px
+no_focus [class="plasmashell" window_type="notification"]
+for_window [title="Desktop — Plasma"] kill, floating enable, border none
+for_window [class="VirtualBox Manage"] floating enable
+for_window [class="VirtualBox Machine"] floating enable
+no_focus [class="plasmashell" window_type="on_screen_display"]
 
+#****************************************************************************
+#	Keybinds
 #****************************************************************************
 
 set $mod Mod4
@@ -87,15 +113,25 @@ set $ws2 "2"
 set $ws3 "3"
 set $ws4 "4"
 set $ws5 "5"
-set $ws6 "6"
-set $ws7 "7"
-set $ws8 "8"
-set $ws9 "9"
-set $ws10 "10"
 
-assign [class="kitty"] $ws1
+# $ws1
 assign [class="Alacritty"] $ws1
+
+# $ws2
 assign [class="firefox"] $ws2
+
+# $ws3
+assign [class="[s|S]ignal"] $ws3
+assign [class="[m|M]icrosoft [t|T]eams - [p|P]review"] $ws3
+assign [class="[s|S]lack"] $ws3
+
+# $ws4
+assign [class="vlc"] $ws4
+assign [class="[s|S]potify"] $ws4
+
+# $ws5
+assign [class="VirtualBox Manage"] $ws5
+assign [class="VirtualBox Machine"] $ws5
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
@@ -103,11 +139,6 @@ bindsym $mod+2 workspace $ws2
 bindsym $mod+3 workspace $ws3
 bindsym $mod+4 workspace $ws4
 bindsym $mod+5 workspace $ws5
-bindsym $mod+6 workspace $ws6
-bindsym $mod+7 workspace $ws7
-bindsym $mod+8 workspace $ws8
-bindsym $mod+9 workspace $ws9
-bindsym $mod+0 workspace $ws10
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace $ws1
@@ -115,19 +146,14 @@ bindsym $mod+Shift+2 move container to workspace $ws2
 bindsym $mod+Shift+3 move container to workspace $ws3
 bindsym $mod+Shift+4 move container to workspace $ws4
 bindsym $mod+Shift+5 move container to workspace $ws5
-bindsym $mod+Shift+6 move container to workspace $ws6
-bindsym $mod+Shift+7 move container to workspace $ws7
-bindsym $mod+Shift+8 move container to workspace $ws8
-bindsym $mod+Shift+9 move container to workspace $ws9
-bindsym $mod+Shift+0 move container to workspace $ws10
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # opens KDE logout confirmation screen
-# bindsym $mod+Shift+e exec --no-startup-id qdbus org.kde.ksmserver /KSMServer org.kde.KSMServerInterface.logout -1 -1 -1
-bindsym $mod+Shift+e exec i3-msg exit
+bindsym $mod+Shift+e exec --no-startup-id qdbus org.kde.ksmserver /KSMServer org.kde.KSMServerInterface.logout -1 -1 -1
+#bindsym $mod+Shift+e exec i3-msg exit
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -156,7 +182,7 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-bindsym $mod+d exec rofi -show drun -location 0 -theme ~/.config/rofi/launchers/simple.rasi
+bindsym $mod+d exec rofi -show drun -location 0 -theme ~/.config/rofi/launchers/nord.rasi
 
 # flash current window
 bindsym $mod+n exec --no-startup-id flash_window
@@ -167,13 +193,13 @@ bindsym $mod+n exec --no-startup-id flash_window
 
 #********************************************************************************
 
-exec --no-startup-id feh --bg-scale ~/Pictures/Wallpapers/cappadocia.jpg
-exec --no-startup-id ~/.scripts/feh-blur -b 12 -D 0
+exec --no-startup-id feh --bg-scale ~/Pictures/Wallpapers/forest.jpg
 exec --no-startup-id flashfocus
-exec --no-startup-id /usr/bin/pamac-tray
-exec --no-startup-id /usr/bin/blueman-tray
-exec --no-startup-id /usr/bin/nm-applet
-exec --no-startup-id /usr/bin/redshift
+exec --no-startup-id pamac-tray
+exec --no-startup-id blueman-tray
+exec --no-startup-id nm-applet
+exec --no-startup-id redshift -b 1.0:.75 -l geoclue2 -t 4500:4500
+exec --no-startup-id firefox
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec --no-startup-id picom
 
@@ -184,11 +210,11 @@ exec --no-startup-id picom
 #********************************************************************************
 
 # ~/.Xresources include - gruvbox
-set_from_resource $fg foreground #ebdbb2
-set_from_resource $bg background #282828
-set_from_resource $black color0 #282828
-set_from_resource $darkgray color8 #928374
-set_from_resource $darkred color1 #cc241d
+set_from_resource $fg foreground
+set_from_resource $bg background
+set_from_resource $black color0
+set_from_resource $darkgray color8
+set_from_resource $darkred color1
 set_from_resource $red color9
 set_from_resource $darkgreen color2
 set_from_resource $red color10
@@ -212,10 +238,10 @@ set_from_resource $white color15
 
 # blue gruvbox
 # class                 border|backgr|text|indicator|child_border
-client.focused          $blue $blue $darkgray $darkmagenta $darkgray
-client.focused_inactive $darkgray $darkgray $yellow $darkmagenta $darkgray
-client.unfocused        $darkgray $darkgray $yellow $darkmagenta $darkgray
-client.urgent           $red $red $white $red $red
+#client.focused          $blue $blue $darkgray $darkmagenta $darkgray
+#client.focused_inactive $darkgray $darkgray $yellow $darkmagenta $darkgray
+#client.unfocused        $darkgray $darkgray $yellow $darkmagenta $darkgray
+#client.urgent           $red $red $white $red $red
 
 # Theme colors
 ## class                   border  backgr. text    indic.   child_border

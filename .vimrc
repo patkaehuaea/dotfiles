@@ -8,6 +8,11 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 endif
 call plug#begin('~/.vim/plugged')
 
+" A colorful, dark color scheme, inspired by ir_black and twilight.
+Plug 'nanotech/jellybeans.vim'
+
+" Enable syntax highlighting for i3 config.
+Plug 'mboughaba/i3config.vim'
 
 " Lean & mean status/tabline for vim that's light as air.
 Plug 'vim-airline/vim-airline'
@@ -22,6 +27,9 @@ set background=dark    " Setting dark mode
 " Molokai is a Vim port of the monokai theme for TextMate originally created by Wimer Hazenberg.
 Plug 'tomasr/molokai'
 
+" A plugin to color colornames and codes.
+Plug 'gko/vim-coloresque'
+
 " Dark blue color scheme for Vim and Neovim
 Plug 'cocopon/iceberg.vim'
 
@@ -30,6 +38,7 @@ Plug 'arcticicestudio/nord-vim'
 
 " A vim plugin for syntax highlighting Ansible's common filetypes.
 Plug 'pearofducks/ansible-vim'
+
 " Navigation for Chef cookbooks and recipes.
 Plug 'dougireton/vim-chef'
 
@@ -76,7 +85,7 @@ call plug#end()
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Set colorscheme after installing plugins to prevent
 " 'colorscheme not found' error.
-colorscheme nord
+colorscheme jellybeans
 " Active Cursor Line Number Background
 let g:nord_cursor_line_number_background = 1
 syntax on " syntax highlighting on

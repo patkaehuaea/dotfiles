@@ -13,6 +13,7 @@ return {
 		file_manager 									= 'ranger',                                -- GUI File manager
 		network_manager 								= 'networkmanager_dmenu',					-- Network manager
 		bluetooth_manager 								= 'blueman-manager',						-- Bluetooth manager
+		lock = 'xflock4',  -- Lockscreen
 		package_manager 								= 'pamac-manager',							-- GUI Package manager
 		--lock 											= 'awesome-client "_G.show_lockscreen()"',  -- Lockscreen
 		rofiweb											= 'rofi -dpi ' .. screen.primary.dpi .. 
@@ -22,7 +23,7 @@ return {
 														  '/configuration/rofi/sidebar/rofi.rasi', 	-- Rofi Web Search
 
 		rofiappmenu 									= 'rofi -dpi ' .. screen.primary.dpi ..
-														  ' -show drun -theme ~/.config/rofi/launchers/simple.rasi'   -- Application Menu
+														  ' -show drun -theme ~/.config/rofi/launchers/nord.rasi'   -- Application Menu
 	},
 	
 	run_on_start_up = {
@@ -34,7 +35,6 @@ return {
 		'redshift', -- filter blue light
 		'signal-desktop', -- Slack messaging
 		'slack', -- Slack messaging
-		'teams', -- Microsoft Teams messaging
 		'xfce4-clipman',
 	  'xfce4-power-manager',
 	  'xfce4-screensaver --no-daemon',

@@ -12,5 +12,5 @@
 # gnome_do	slingshot		appdrawer			appfolder		column
 # row		row_center		screen				row_dock		row_dropdown
 
-style=simple
+style=nord
 rofi -no-lazy-grab -show drun -theme $style.rasi
