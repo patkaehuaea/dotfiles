@@ -1,0 +1,13 @@
+# Instruct Qt 5.6, Qt 5 applications can to honor screen DPI by
+# setting this environment variable:
+# ref: https://wiki.archlinux.org/index.php/HiDPI
+export QT_AUTO_SCREEN_SCALE_FACTOR=1
+# set arrangement, resolution, and HiDPI for both displays at beginning of session
+#xrandr --output DP-1 --primary --mode 3840x2160 --rate 60.00 --dpi 115 --output HDMI-1 --mode 3840x2160 --rate 30.00 --left-of DP-1
+
+# remap escape key to caps lock
+setxkbmap -option caps:escape
+
+# load settings properly when x starts
+# verify with: xdpyinfo | grep -B 2 resolution
+xrdb -merge ~/.Xresources
