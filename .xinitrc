@@ -10,6 +10,8 @@ xrdb -merge ~/.Xresources
 
 # launch AwesomeWM and redirect to file for easier 
 # analysis and debugging
-exec /usr/bin/awesome >> ~/.cache/awesome/stdout 2>> ~/.cache/awesome/stderr
+# exec /usr/bin/awesome >> ~/.cache/awesome/stdout 2>> ~/.cache/awesome/stderr
 
 # exec startxfce4 && xfwm4--replace /usr/bin/i3
+
+exec startplasma-x11
