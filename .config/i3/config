@@ -9,22 +9,29 @@ for_window [window_role="task_dialog"] floating enable
 # Prevents dolphin launching to black screen
 for_window [window_role="dolphin"] floating enable
 for_window [class="yakuake"] floating enable
-for_window [class="systemsettings"] floating enable
+for_window [class="systemsettings5"] floating enable, border normal
+for_window [class="systemsettings"] floating enable, border normal
 for_window [class="plasmashell"] floating enable;
 for_window [class="Plasma"] floating enable; border none
 for_window [title="plasma-desktop"] floating enable; border none
 for_window [title="win7"] floating enable; border none
-for_window [class="krunner"] floating enable; border none
+for_window [class="krunner"] floating enable border none
 for_window [class="Kmix"] floating enable; border none
 for_window [class="Klipper"] floating enable; border none
 for_window [class="Plasmoidviewer"] floating enable; border none
 for_window [class="(?i)*nextcloud*"] floating disable
 for_window [class="plasmashell" window_type="notification"] border none, move right 700px, move down 450px
 no_focus [class="plasmashell" window_type="notification"]
-for_window [title="Desktop — Plasma"] kill, floating enable, border none
-for_window [class="VirtualBox Manage"] floating enable
-for_window [class="VirtualBox Machine"] floating enable
+for_window [title="Desktop — Plasma"] kill, floating enable border none
 no_focus [class="plasmashell" window_type="on_screen_display"]
+
+#****************************************************************************
+#	Other Applications
+#****************************************************************************
+
+for_window [class="[f|F]irefox"] border normal
+for_window [class="VirtualBox Manage"] floating enable border normal
+for_window [class="VirtualBox Machine"] floating enable border normal
 
 #****************************************************************************
 #	Keybinds
@@ -113,6 +120,7 @@ set $ws2 "2"
 set $ws3 "3"
 set $ws4 "4"
 set $ws5 "5"
+set $ws6 "6"
 
 # $ws1
 assign [class="Alacritty"] $ws1
@@ -126,12 +134,17 @@ assign [class="[m|M]icrosoft [t|T]eams - [p|P]review"] $ws3
 assign [class="[s|S]lack"] $ws3
 
 # $ws4
-assign [class="vlc"] $ws4
-assign [class="[s|S]potify"] $ws4
+for_window [title="Mail - Pat Kaehuaea - Outlook - Mozilla Firefox"] move window to workspace $ws4
+for_window [title="*Inbox | pat@kaehuaea.me | ProtonMail - Mozilla Firefox"] move window to workspace $ws4
+
 
 # $ws5
-assign [class="VirtualBox Manage"] $ws5
-assign [class="VirtualBox Machine"] $ws5
+assign [class="vlc"] $ws5
+assign [class="[s|S]potify"] $ws5
+
+# $ws6
+assign [class="VirtualBox Manage"] $ws6
+assign [class="VirtualBox Machine"] $ws6
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
@@ -139,6 +152,7 @@ bindsym $mod+2 workspace $ws2
 bindsym $mod+3 workspace $ws3
 bindsym $mod+4 workspace $ws4
 bindsym $mod+5 workspace $ws5
+bindsym $mod+6 workspace $ws6
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace $ws1
@@ -146,14 +160,15 @@ bindsym $mod+Shift+2 move container to workspace $ws2
 bindsym $mod+Shift+3 move container to workspace $ws3
 bindsym $mod+Shift+4 move container to workspace $ws4
 bindsym $mod+Shift+5 move container to workspace $ws5
+bindsym $mod+Shift+6 move container to workspace $ws6
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # opens KDE logout confirmation screen
-bindsym $mod+Shift+e exec --no-startup-id qdbus org.kde.ksmserver /KSMServer org.kde.KSMServerInterface.logout -1 -1 -1
-#bindsym $mod+Shift+e exec i3-msg exit
+#bindsym $mod+Shift+e exec --no-startup-id qdbus org.kde.ksmserver /KSMServer org.kde.KSMServerInterface.logout -1 -1 -1
+bindsym $mod+Shift+e exec i3-msg exit
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -184,7 +199,7 @@ bindsym $mod+r mode "resize"
 
 bindsym $mod+d exec rofi -show drun -location 0 -theme ~/.config/rofi/launchers/nord.rasi
 
-# flash current window
+# Use 'flashfocus-git' aur package to show current window.
 bindsym $mod+n exec --no-startup-id flash_window
 
 #*********************************************************************************
@@ -198,9 +213,11 @@ exec --no-startup-id flashfocus
 exec --no-startup-id pamac-tray
 exec --no-startup-id blueman-tray
 exec --no-startup-id nm-applet
-exec --no-startup-id redshift -b 1.0:.75 -l geoclue2 -t 4500:4500
+#exec --no-startup-id redshift -b 1.0:.85 -l geoclue2 -t 10500:4500
 exec --no-startup-id firefox
+exec --no-startup-id spotify
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+#exec_always --no-startup-id flashfocus
 exec --no-startup-id picom
 
 #********************************************************************************
