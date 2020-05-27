@@ -29,7 +29,6 @@ no_focus [class="plasmashell" window_type="on_screen_display"]
 #	Other Applications
 #****************************************************************************
 
-for_window [class="[f|F]irefox"] border normal
 for_window [class="VirtualBox Manage"] floating enable border normal
 for_window [class="VirtualBox Machine"] floating enable border normal
 
@@ -58,7 +57,7 @@ font pango:monospace 8
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec alacritty
+bindsym $mod+Return exec alacritty && cd $PWD
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -88,10 +87,10 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
-#bindsym $mod+h split h
+bindsym $mod+Control+h split h
 
 # split in vertical orientation
-bindsym $mod+v split v
+bindsym $mod+Control+v split v
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
@@ -113,6 +112,11 @@ bindsym $mod+a focus parent
 # focus the child container
 #bindsym $mod+d focus child
 
+# Pulse Audio controls
+bindsym XF86AudioRaiseVolume exec --no-startup-id pamixer -i 5 #increase sound volume
+bindsym XF86AudioLowerVolume exec --no-startup-id pamixer -d 5 #decrease sound volume
+bindsym XF86AudioMute exec --no-startup-id pamixer -t # mute sound
+
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
 set $ws1 "1"
@@ -127,20 +131,23 @@ assign [class="Alacritty"] $ws1
 
 # $ws2
 assign [class="firefox"] $ws2
+assign [class="[g|G]oogle-[c|C]hrome"] $ws2
 
 # $ws3
-assign [class="[s|S]ignal"] $ws3
-assign [class="[m|M]icrosoft [t|T]eams - [p|P]review"] $ws3
-assign [class="[s|S]lack"] $ws3
+# Do not specify "firefox" class or $ws2 match will not work.
+for_window [title="Mail - Pat Kaehuaea - Outlook"] move window to workspace $ws3
+for_window [title="*Inbox | pat@kaehuaea.me | ProtonMail"] move window to workspace $ws3
+for_window [title="Login | ProtonMail"] move window to workspace $ws3
 
-# $ws4
-for_window [title="Mail - Pat Kaehuaea - Outlook - Mozilla Firefox"] move window to workspace $ws4
-for_window [title="*Inbox | pat@kaehuaea.me | ProtonMail - Mozilla Firefox"] move window to workspace $ws4
-
+# $ws3
+assign [class="[s|S]ignal"] $ws4
+assign [class="[m|M]icrosoft [t|T]eams - [p|P]review"] $ws4
+assign [class="[s|S]lack"] $ws4
 
 # $ws5
 assign [class="vlc"] $ws5
-assign [class="[s|S]potify"] $ws5
+assign [class="Spotify" title="Spotify Premium"] $ws2
+assign [class="Spotify"] $ws5
 
 # $ws6
 assign [class="VirtualBox Manage"] $ws6
@@ -196,9 +203,7 @@ mode "resize" {
 }
 
 bindsym $mod+r mode "resize"
-
 bindsym $mod+d exec rofi -show drun -location 0 -theme ~/.config/rofi/launchers/nord.rasi
-
 # Use 'flashfocus-git' aur package to show current window.
 bindsym $mod+n exec --no-startup-id flash_window
 
@@ -208,16 +213,16 @@ bindsym $mod+n exec --no-startup-id flash_window
 
 #********************************************************************************
 
-exec --no-startup-id feh --bg-scale ~/Pictures/Wallpapers/forest.jpg
+#exec --no-startup-id feh --bg-scale ~/Pictures/Wallpapers/forest.jpg
+exec --no-startup-id feh --bg-scale ~/Pictures/Wallpapers/alexandr-popadin-YXE2-HUI0iU-unsplash.jpg
 exec --no-startup-id flashfocus
 exec --no-startup-id pamac-tray
 exec --no-startup-id blueman-tray
 exec --no-startup-id nm-applet
 #exec --no-startup-id redshift -b 1.0:.85 -l geoclue2 -t 10500:4500
-exec --no-startup-id firefox
+exec --no-startup-id chrome
 exec --no-startup-id spotify
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
-#exec_always --no-startup-id flashfocus
 exec --no-startup-id picom
 
 #********************************************************************************
@@ -246,27 +251,13 @@ set_from_resource $cyan color14
 set_from_resource $lightgray color7
 set_from_resource $white color15
 
-# green gruvbox
-# class                 border|backgr|text|indicator|child_border
-#client.focused          $green $green $darkgray $purple $darkgray
-#client.focused_inactive $darkgray $darkgray $yellow $purple $darkgray
-#client.unfocused        $darkgray $darkgray $yellow $purple $darkgray
-#client.urgent           $red $red $white $red $red
-
-# blue gruvbox
-# class                 border|backgr|text|indicator|child_border
-#client.focused          $blue $blue $darkgray $darkmagenta $darkgray
-#client.focused_inactive $darkgray $darkgray $yellow $darkmagenta $darkgray
-#client.unfocused        $darkgray $darkgray $yellow $darkmagenta $darkgray
-#client.urgent           $red $red $white $red $red
-
 # Theme colors
-## class                   border  backgr. text    indic.   child_border
-#client.focused          #4c7899 #285577 #ffffff #2e9ef4   #285577
-#client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
-#client.unfocused        #333333 #222222 #888888 #292d2e   #222222
-#client.urgent           #2f343a #900000 #ffffff #900000   #900000
-#client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
+# class                   border  backgr. text    indic.   child_border
+client.focused          #4c7899 #285577 #ffffff #2e9ef4   #285577
+client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
+client.unfocused        #333333 #222222 #888888 #292d2e   #222222
+client.urgent           #2f343a #900000 #ffffff #900000   #900000
+client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 
 # Configure border style <normal|1pixel|pixel xx|none|pixel>
 new_window none
