@@ -11,3 +11,23 @@ setxkbmap -option caps:escape
 # load settings properly when x starts
 # verify with: xdpyinfo | grep -B 2 resolution
 xrdb -merge ~/.Xresources
+
+# startup
+
+## systemtray
+blueman-applet &
+nm-applet & 
+pasystray & 
+indicator-sound-switcher &
+xfce4-clipman &
+xfce4-power-manager &
+pamac-tray &
+
+## utilities
+picom &
+
+## apps
+
+google-chrome-stable &
+spotify &
+
