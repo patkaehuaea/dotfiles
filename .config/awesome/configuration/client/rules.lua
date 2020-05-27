@@ -86,7 +86,7 @@ ruled.client.connect_signal("request::rules", function()
 	}
 
 	-- Splash
-	ruled.client.append_rule {
+  ruled.client.append_rule {
 		id         = "splash",
 		rule_any   = { 
 			type = { "splash" }
@@ -104,49 +104,67 @@ ruled.client.connect_signal("request::rules", function()
 		}
 	}
 
--- terminal emulators
-ruled.client.append_rule {
-	id         = "terminals",
-	rule_any   = { 
-		class = { 
-			"Alacritty"
-		},
-	},
-	properties = {
-		tag =   '',
-		switchtotag = true,
-		draw_backdrop = false,
-		size_hints_honor = false
-	}
-}
+  -- terminal emulators
+  ruled.client.append_rule {
+  	id         = "terminals",
+  	rule_any   = { 
+  		class = { 
+  			"Alacritty"
+  		},
+  	},
+  	properties = {
+  		tag =   '',
+  		switchtotag = true,
+  		draw_backdrop = false,
+  		size_hints_honor = false
+  	}
+  }
+  
+  -- Browsers
+  ruled.client.append_rule {
+  	id         = "web",
+  	rule_any   = {
+  		class = {
+  			"firefox",
+  			"google-chrome",
+  			"Google-chrome"
+  		}
+  	},
+  	properties = {
+  		tag =  '',
+  		switchtotag = true
+  	}
+  }
+  
+  ruled.client.append_rule {
+  	id         = 'mail',
+  	-- Does not seem to work with above 'web' rule if I specify
+  	-- class with rules_every. Have to leave matching on
+  	-- window manager name for now.
+  	rule_any = {
+  		name = {
+  		  'Outlook',
+  		  'ProtonMail'
+  		}
+  	},
+  	properties = { 
+  		tag =  '﫯',
+  		switchtotag = true
+  	}
+  }
 
--- Browsers
-ruled.client.append_rule {
-	id         = "web",
-	rule_any   = { 
-		class = {
-			"firefox"
-		}
-	},
-	properties = { 
-		tag =  ''
-	}
-}
-	-- File managers
 	ruled.client.append_rule {
 		id         = 'messaging',
 		rule_any   = {
 			class = {
 				"microsoft teams - preview",
 				"Microsoft Teams - Preview",
-				"signal",
-				"Signal",
-				"slack",
-				"Slack"
+				"[s|S]ignal",
+				"[s|S]lack"
 			}
 		},
 		properties = { 
-			tag =  '',
+			tag =  '﬐',
 			switchtotag = true
 		}
 	}
@@ -157,28 +175,25 @@ ruled.client.append_rule {
 		rule_any   = {
 			class = {
 				"vlc",
-				"Spotify"
+				"[s|S]potify"
 			}
 		},
 		properties = {
-			tag =  '',
-			draw_backdrop = false
+			tag =  '',
+			draw_backdrop = false,
+			switchtotag = true
 		}
 	}
 
 	ruled.client.append_rule {
-		id         = "sandbox",
+		id         = "virtualbox",
 		rule_any   = {
 			class = {
-				"Gimp-2.10",
-				"Steam",
-				"VirtualBox Manage",
-				"VirtualBox Machine",
-				"Wine"
+				"VirtualBox [Machine|Manage]"
 			},
 		},
 		properties = {
-			tag =  '',
+			tag =  '',
 			floating = true,
 		}
 	}

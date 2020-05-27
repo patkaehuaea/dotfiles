@@ -133,6 +133,18 @@ local TopPanel = function(s, offset)
 		)
 	)
 
+  s.systray = wibox.widget {
+  	{
+  		base_size = dpi(20),
+  		horizontal = true,
+  		screen = 'primary',
+  		widget = wibox.widget.systray
+  	},
+  	visible = true,
+  	top = dpi(3),
+  	widget = wibox.container.margin
+  }
+
 	s.clock_widget = wibox.widget.textclock(
 		'<span font="SFNS Display Bold 11">%A, %I:%M %p</span>',
 		1
@@ -278,21 +290,16 @@ local TopPanel = function(s, offset)
 	s.updater 		= require('widget.package-updater')()
 	s.end_session 		= require('widget.end-session')()
 	s.screen_rec 	= require('widget.screen-recorder')()
-	s.music       	= require('widget.music')()
 	s.bluetooth   	= require('widget.bluetooth')()
 	s.wifi        	= require('widget.wifi')()
   s.blue_light = require('widget.blue-light')
   s.float_panel  	= require('layout.floating-panel')()
   s.r_dashboard 	= require('layout.right-panel.right-panel-opener')()
-
---  awful.util.tagnames   = { '', '', '', '', '', '' }
---  awful.tag(awful.util.tagnames, s, awful.layout.layouts)
   s.mytaglist = awful.widget.taglist {
     screen = s, 
-    filter = awful.widget.taglist.filter.all,
-    style = {
-		  font = 'SFNS Display 12'
-    },
+    -- Display tags with clients. List of available 
+    -- filters: https://awesomewm.org/doc/api/classes/awful.widget.taglist.html#List_filters
+    filter = awful.widget.taglist.filter.noempty,
     buttons = awful.util.taglist_buttons
   }
 
@@ -301,8 +308,7 @@ local TopPanel = function(s, offset)
 		expand = "none",
 		{
 			layout = wibox.layout.fixed.horizontal,
-		s.mytaglist,
-      --tag_list(s),
+		  s.mytaglist,
 			task_list(s),
 			s.add_button
 		}, 
@@ -314,10 +320,10 @@ local TopPanel = function(s, offset)
 				margins = dpi(5),
 				widget = wibox.container.margin
 			},
+			s.systray,
 			s.blue_light,
 			s.updater,
 			s.screen_rec,
---			s.music,
 			s.bluetooth,
 			s.wifi,
 			s.end_session,

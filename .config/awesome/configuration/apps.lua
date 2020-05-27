@@ -27,16 +27,9 @@ return {
 	},
 	
 	run_on_start_up = {
-		'blueman-applet', -- bluetooth tray icon
-		'firefox', -- firefox web browser
-		'nm-applet', -- network manager applet
-		'pasystray', -- pulseaudio system tray utility
 		'picom -b --experimental-backends --dbus --config ~/.config/picom.conf',
-		'redshift', -- filter blue light
 		'signal-desktop', -- Slack messaging
 		'slack', -- Slack messaging
-		'xfce4-clipman',
-	  'xfce4-power-manager',
 	  'xfce4-screensaver --no-daemon',
 		'xrdb $HOME/.Xresources', -- X windows config and settings
 	},

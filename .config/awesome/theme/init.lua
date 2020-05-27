@@ -1,21 +1,16 @@
 local gears = require('gears')
 local beautiful = require('beautiful')
-
 local filesystem = require('gears.filesystem')
 local dpi = beautiful.xresources.apply_dpi
-
 local theme_dir = filesystem.get_configuration_dir() .. '/theme'
 local titlebar_theme = "stoplight"
 local titlebar_icon_path = theme_dir .. "/icons/titlebar/" .. titlebar_theme .. '/'
 local tip = titlebar_icon_path
-
 local xrdb = beautiful.xresources.get_current_theme()
 
 local theme = {}
 theme.icons = theme_dir .. '/icons/'
 theme.lain_icons = os.getenv("HOME") .. "/.config/awesome/lain/icons/layout/default/"
-
--- Transfer from floppy init.lua
 
 theme.background = xrdb.background
 theme.transparent = '#00000000'
@@ -23,7 +18,6 @@ theme.transparent = '#00000000'
 -- Font
 theme.font = 'SFNS Display 16'
 theme.font_bold = 'SFNS Display Bold 16'
-
 
 -- Menu icon theme
 theme.icon_theme = 'Papirus'
@@ -174,7 +168,6 @@ theme.separator_color = '#f2f2f244'
 
 -- Layoutbox icons
 
-
 theme.layout_fairh = theme.icons.."layouts/fairhw.png"
 theme.layout_fairv = theme.icons.."layouts/fairvw.png"
 theme.layout_floating  = theme.icons.."layouts/floatingw.png"
@@ -200,15 +193,19 @@ theme.layout_cascadetile = theme.lain_icons .. "cascadetile.png" -- cascade.tile
 theme.layout_centerwork  = theme.lain_icons .. "centerworkw.png"
 theme.layout_centerworkh = theme.lain_icons .. "centerworkh.png" -- centerwork.horizontal
 	-- Taglist
-
+  -- Adjust size of glyphs here.
+	theme.taglist_font = 'Source Code Pro for Powerline 16'
 	theme.taglist_bg_empty = theme.background .. '99'
-	theme.taglist_bg_occupied =  '#ffffff' .. '1A'
+	-- Set to background since setting is redundant given
+	-- empty tags are filtered.
+	theme.taglist_bg_occupied = theme.background --'#ffffff' .. '1A'
 	theme.taglist_bg_urgent = "#E91E63" .. '99'
-	-- default below
-	--theme.taglist_bg_focus = theme.background
---nord14 - light green
-	theme.taglist_bg_focus =  '#A3BE8C'
-	theme.taglist_spacing = dpi(0)
+  theme.taglist_bg_focus = theme.background
+-- Changes font color rather than background.
+--	theme.taglist_fg_focus =  '#A3BE8C'
+theme.taglist_bg_focus =  '#81A1C1' -- color4: nord9 - blue
+--theme.taglist_bg_focus =  '#A3BE8C'-- color10: nord14 - light green
+	theme.taglist_spacing = dpi(2)
 
 	-- Tasklist
 
