@@ -8,6 +8,11 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 endif
 call plug#begin('~/.vim/plugged')
 
+Plug 'w0ng/vim-hybrid'
+
+" Spacegray is a colorscheme for Vim loosely modeled after the spacegray theme for Xcode.
+Plug 'ajh17/Spacegray.vim'
+
 " A colorful, dark color scheme, inspired by ir_black and twilight.
 Plug 'nanotech/jellybeans.vim'
 
@@ -23,7 +28,7 @@ Plug 'jaredgorski/spacecamp'
 " Gruvbox theme is heavily inspired by badwolf, jellybeans and solarized.
 Plug 'morhetz/gruvbox'
 
-set background=dark    " Setting dark mode
+set background=dark
 " Molokai is a Vim port of the monokai theme for TextMate originally created by Wimer Hazenberg.
 Plug 'tomasr/molokai'
 
@@ -83,8 +88,6 @@ call plug#end()
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " General
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Set colorscheme after installing plugins to prevent
-" 'colorscheme not found' error.
 colorscheme jellybeans
 " Active Cursor Line Number Background
 let g:nord_cursor_line_number_background = 1

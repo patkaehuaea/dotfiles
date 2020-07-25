@@ -24,7 +24,7 @@ xfce4-power-manager &
 pamac-tray &
 
 ## utilities
-picom &
+picom -b --experimental-backends --dbus --config ~/.config/picom.conf &
 
 ## apps
 
