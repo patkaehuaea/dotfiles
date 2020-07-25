@@ -8,6 +8,11 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 endif
 call plug#begin('~/.vim/plugged')
 
+" A 24bit colorscheme based on the star Rigel - the bright blue star in the constellation of Orion
+Plug 'Rigellute/rigel'
+
+Plug 'skbolton/embark'
+
 Plug 'w0ng/vim-hybrid'
 
 " Spacegray is a colorscheme for Vim loosely modeled after the spacegray theme for Xcode.
@@ -88,7 +93,7 @@ call plug#end()
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " General
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-colorscheme jellybeans
+colorscheme embark
 " Active Cursor Line Number Background
 let g:nord_cursor_line_number_background = 1
 syntax on " syntax highlighting on
