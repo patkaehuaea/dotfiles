@@ -7,7 +7,17 @@ export LANG=en_US.UTF-8
 
 # Path to your oh-my-zsh configuration.
 export ZSH=$HOME/.oh-my-zsh
-export ZSH_THEME=spaceship
+export ZSH_THEME=robbyrussell
+#export ZSH_THEME=spaceship
+
+SPACESHIP_CHAR_SYMBOL='$'
+# ORDER
+SPACESHIP_PROMPT_ORDER=(
+  char
+  dir
+  golang
+  docker
+)
 
 # Set to this to use case-sensitive completion
 export CASE_SENSITIVE='true'
@@ -17,8 +27,9 @@ export DISABLE_AUTO_TITLE='true'
 
 # Which plugins would you like to load? (plugins can be found in ~/.dotfiles/oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(jira colorize compleat dirpersist autojump git gulp history cp)
+#plugins=(jira colorize compleat dirpersist autojump gulp history cp)
 
+export ZSH_DISABLE_COMPFIX='true'
 source $ZSH/oh-my-zsh.sh
 
 unsetopt correct
