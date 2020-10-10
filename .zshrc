@@ -5,6 +5,13 @@
 # ref: https://stackoverflow.com/questions/30479607/explain-the-effects-of-export-lang-lc-ctype-lc-all
 export LANG=en_US.UTF-8
 
+# Source each time the shell is run. Needs to be here
+# on Linux instead of xprofile, or xinit.
+source ~/.shellvars
+source ~/.shellfn
+source ~/.shellpaths
+source ~/.shellaliases
+
 # Path to your oh-my-zsh configuration.
 export ZSH=$HOME/.oh-my-zsh
 export ZSH_THEME=robbyrussell
