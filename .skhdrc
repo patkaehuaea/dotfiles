@@ -1,0 +1,8 @@
+# restart yabai
+cmd + alt - r : launchctl kickstart -k "gui/${UID}/homebrew.mxcl.yabai"
+
+# focus window
+alt - j : yabai -m window --focus north
+alt - k : yabai -m window --focus south
+alt - h : yabai -m window --focus west
+alt - l : yabai -m window --focus east

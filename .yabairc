@@ -1,0 +1,12 @@
+# general space settings
+yabai -m config layout bsp
+yabai -m config top_padding 5
+yabai -m config bottom_paddingg 5
+yabai -m config left_padding 5
+yabai -m config right_padding 5
+yabai -m config window_gap 5
+
+fast focus desktop
+cmd + alt - x : yabai -m space --focus recent
+cmd + alt - 1 : yabai -m space --focus 1
+cmd + alt - 2 : yabai -m space --focus 2
