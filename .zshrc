@@ -9,13 +9,13 @@ export LANG=en_US.UTF-8
 # on Linux instead of xprofile, or xinit.
 source ~/.shellvars
 source ~/.shellfn
-source ~/.shellpaths
-source ~/.shellaliases
+#source ~/.shellpaths
+#source ~/.shellaliases
 
 # Path to your oh-my-zsh configuration.
 export ZSH=$HOME/.oh-my-zsh
 export ZSH_THEME=robbyrussell
-#export ZSH_THEME=spaceship
+export ZSH_THEME=spaceship
 
 SPACESHIP_CHAR_SYMBOL='$'
 # ORDER
