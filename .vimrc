@@ -144,8 +144,8 @@ set mouse=a " use mouse everywhere
 set shortmess=atI " shortens messages to avoid 'press a key' prompt
 set report=0 " tell us when anything is changed via :...
 set noerrorbells " don't make noise
-set list " we do what to show tabs, to ensure we get them out of my files
-set listchars=tab:>-,trail:- " show tabs and trailing whitespace
+set list " don't want to see tabs (golang) but do want to see trailing space
+set listchars=tab:\ \ ,trail:- " avoid showing tabs as ^I and replace with spaces BUT do show trailing whitespace
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Visual Cues
