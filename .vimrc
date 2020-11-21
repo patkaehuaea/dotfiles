@@ -21,9 +21,6 @@ Plug 'ajh17/Spacegray.vim'
 " A colorful, dark color scheme, inspired by ir_black and twilight.
 Plug 'nanotech/jellybeans.vim'
 
-" Enable syntax highlighting for i3 config.
-Plug 'mboughaba/i3config.vim'
-
 " Lean & mean status/tabline for vim that's light as air.
 Plug 'vim-airline/vim-airline'
 
@@ -34,9 +31,6 @@ Plug 'jaredgorski/spacecamp'
 Plug 'morhetz/gruvbox'
 
 set background=dark
-" Molokai is a Vim port of the monokai theme for TextMate originally created by Wimer Hazenberg.
-Plug 'tomasr/molokai'
-
 " A plugin to color colornames and codes.
 Plug 'gko/vim-coloresque'
 
@@ -93,7 +87,7 @@ call plug#end()
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " General
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-colorscheme embark
+colorscheme iceberg
 " Active Cursor Line Number Background
 let g:nord_cursor_line_number_background = 1
 syntax on " syntax highlighting on

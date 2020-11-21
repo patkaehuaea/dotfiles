@@ -19,12 +19,7 @@ export ZSH_THEME=spaceship
 
 SPACESHIP_CHAR_SYMBOL='$'
 # ORDER
-SPACESHIP_PROMPT_ORDER=(
-  char
-  dir
-  golang
-  docker
-)
+SPACESHIP_PROMPT_ORDER=(char dir golang docker)
 
 # Set to this to use case-sensitive completion
 export CASE_SENSITIVE='true'
