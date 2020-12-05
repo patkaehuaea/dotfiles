@@ -21,6 +21,7 @@ pasystray &
 indicator-sound-switcher &
 xfce4-clipman &
 xfce4-power-manager &
+xfce4-screensaver --no-daemon &
 pamac-tray &
 
 ## utilities
@@ -29,6 +30,4 @@ picom -b --experimental-backends --dbus --config ~/.config/picom.conf &
 ## apps
 
 discord &
-google-chrome-stable &
 spotify &
-
