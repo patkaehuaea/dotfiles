@@ -12,6 +12,10 @@ source ~/.shellfn
 #source ~/.shellpaths
 #source ~/.shellaliases
 
+# Load autojump utility for directory completion.
+[[ -s /home/patk/.autojump/etc/profile.d/autojump.sh ]] && source /home/patk/.autojump/etc/profile.d/autojump.sh
+autoload -U compinit && compinit -u
+
 # Path to your oh-my-zsh configuration.
 export ZSH=$HOME/.oh-my-zsh
 export ZSH_THEME=robbyrussell
