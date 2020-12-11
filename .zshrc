@@ -11,12 +11,37 @@ autoload -U compinit && compinit -u
 
 # Path to your oh-my-zsh configuration.
 export ZSH=$HOME/.oh-my-zsh
-export ZSH_THEME=robbyrussell
+#export ZSH_THEME=robbyrussell
 export ZSH_THEME=spaceship
 
-SPACESHIP_CHAR_SYMBOL='$'
-# ORDER
-SPACESHIP_PROMPT_ORDER=(char dir golang docker)
+#SPACESHIP_CHAR_SYMBOL="$"
+#SPACESHIP_PROMPT_ORDER=(dir golang docker)
+
+SPACESHIP_PROMPT_ORDER=(
+  user          # Username section
+  dir           # Current directory section
+  host          # Hostname section
+  git           # Git section (git_branch + git_status)
+  package       # Package version
+  node          # Node.js section
+  ruby          # Ruby section
+  golang        # Go section
+  haskell       # Haskell Stack section
+  docker        # Docker section
+  aws           # Amazon Web Services section
+  gcloud        # Google Cloud Platform section
+  venv          # virtualenv section
+  conda         # conda virtualenv section
+  pyenv         # Pyenv section
+  kubectl       # Kubectl context section
+  terraform     # Terraform workspace section
+  exec_time     # Execution time
+  line_sep      # Line break
+  vi_mode       # Vi-mode indicator
+  jobs          # Background jobs indicator
+  exit_code     # Exit code section
+  char          # Prompt character
+)
 
 # Set to this to use case-sensitive completion
 export CASE_SENSITIVE='true'
