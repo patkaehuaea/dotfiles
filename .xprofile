@@ -24,8 +24,10 @@ xfce4-power-manager &
 xfce4-screensaver --no-daemon &
 pamac-tray &
 
-## utilities
-picom -b --experimental-backends --dbus --config ~/.config/picom.conf &
+# Pass the --use-ewmh-active-win option to troubleshoot freezing window
+# issue in Slack and firefox on xmonad. 
+# ref: https://github.com/xmonad/xmonad/issues/201#issue-515477499
+picom -b --use-ewmh-active-win --experimental-backends --dbus --config ~/.config/picom.conf &
 
 ## apps
 
