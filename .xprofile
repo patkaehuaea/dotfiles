@@ -27,6 +27,8 @@ pamac-tray &
 picom -b --use-ewmh-active-win --experimental-backends --dbus --config ~/.config/picom.conf &
 
 ## apps
-
 discord &
 spotify &
+# Use redshift to adjust color temperature of screen at night. 
+# Parse location coordinates instead of relying on geoclue dbus provider.
+redshift -l $(curl -s "https://location.services.mozilla.com/v1/geolocate?key=geoclue" | jq '.location.lat, .location.lng' | tr '\n' ':' | sed 's/:$//') &
