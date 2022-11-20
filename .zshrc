@@ -23,22 +23,15 @@ SPACESHIP_PROMPT_ORDER=(
   host          # Hostname section
   git           # Git section (git_branch + git_status)
   package       # Package version
-  node          # Node.js section
-  ruby          # Ruby section
   golang        # Go section
-  haskell       # Haskell Stack section
   docker        # Docker section
   aws           # Amazon Web Services section
-  gcloud        # Google Cloud Platform section
-  venv          # virtualenv section
-  conda         # conda virtualenv section
   pyenv         # Pyenv section
   kubectl       # Kubectl context section
   terraform     # Terraform workspace section
   exec_time     # Execution time
   line_sep      # Line break
   vi_mode       # Vi-mode indicator
-  jobs          # Background jobs indicator
   exit_code     # Exit code section
   char          # Prompt character
 )
@@ -51,7 +44,9 @@ export DISABLE_AUTO_TITLE='true'
 
 # Which plugins would you like to load? (plugins can be found in ~/.dotfiles/oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-#plugins=(jira colorize compleat dirpersist autojump gulp history cp)
+plugins=(
+  zsh-autosuggestions
+)
 
 export ZSH_DISABLE_COMPFIX='true'
 source $ZSH/oh-my-zsh.sh
