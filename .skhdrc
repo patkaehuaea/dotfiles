@@ -1,6 +1,6 @@
 # run commands
 cmd + alt - r : launchctl kickstart -k "gui/${UID}/homebrew.mxcl.yabai"
-cmd - return : kitty --single-instance
+cmd - return : alacritty msg create-window
 cmd + shift - return : /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome
 
 # focus window
