@@ -12,6 +12,17 @@ source ~/.shellfn
 source ~/.shellpaths
 source ~/.shellaliases
 
+# pyenv setup
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+
+# python fix for netskope ca
+export REQUESTS_CA_BUNDLE=$(python -c "from requests.utils import DEFAULT_CA_BUNDLE_PATH; print(DEFAULT_CA_BUNDLE_PATH)")
+
+# autojump setup
+[ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
+
 # Path to your oh-my-zsh configuration.
 export ZSH=$HOME/.oh-my-zsh
 export ZSH_THEME=robbyrussell
@@ -38,5 +49,9 @@ export DISABLE_AUTO_TITLE='true'
 
 export ZSH_DISABLE_COMPFIX='true'
 source $ZSH/oh-my-zsh.sh
+
+# Load az cli automcomplete for zsh:
+autoload bashcompinit && bashcompinit
+source /usr/local/etc/bash_completion.d/az
 
 unsetopt correct
