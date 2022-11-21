@@ -5,12 +5,9 @@
 # ref: https://stackoverflow.com/questions/30479607/explain-the-effects-of-export-lang-lc-ctype-lc-all
 export LANG=en_US.UTF-8
 
-# Source each time the shell is run. Needs to be here
-# on Linux instead of xprofile, or xinit.
-source ~/.shellvars
-source ~/.shellfn
-source ~/.shellpaths
-source ~/.shellaliases
+# Load autojump utility for directory completion.
+[[ -s /home/patk/.autojump/etc/profile.d/autojump.sh ]] && source /home/patk/.autojump/etc/profile.d/autojump.sh
+autoload -U compinit && compinit -u
 
 # pyenv setup
 export PYENV_ROOT="$HOME/.pyenv"
@@ -25,16 +22,29 @@ export REQUESTS_CA_BUNDLE=$(python -c "from requests.utils import DEFAULT_CA_BUN
 
 # Path to your oh-my-zsh configuration.
 export ZSH=$HOME/.oh-my-zsh
-export ZSH_THEME=robbyrussell
-#export ZSH_THEME=spaceship
+#export ZSH_THEME=robbyrussell
+export ZSH_THEME=spaceship
 
-SPACESHIP_CHAR_SYMBOL='$'
-# ORDER
+#SPACESHIP_CHAR_SYMBOL="$"
+#SPACESHIP_PROMPT_ORDER=(dir golang docker)
+
 SPACESHIP_PROMPT_ORDER=(
-  char
-  dir
-  golang
-  docker
+  user          # Username section
+  dir           # Current directory section
+  host          # Hostname section
+  git           # Git section (git_branch + git_status)
+  package       # Package version
+  golang        # Go section
+  docker        # Docker section
+  aws           # Amazon Web Services section
+  pyenv         # Pyenv section
+  kubectl       # Kubectl context section
+  terraform     # Terraform workspace section
+  exec_time     # Execution time
+  line_sep      # Line break
+  vi_mode       # Vi-mode indicator
+  exit_code     # Exit code section
+  char          # Prompt character
 )
 
 # Set to this to use case-sensitive completion
@@ -45,7 +55,9 @@ export DISABLE_AUTO_TITLE='true'
 
 # Which plugins would you like to load? (plugins can be found in ~/.dotfiles/oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-#plugins=(jira colorize compleat dirpersist autojump gulp history cp)
+plugins=(
+  zsh-autosuggestions
+)
 
 export ZSH_DISABLE_COMPFIX='true'
 source $ZSH/oh-my-zsh.sh

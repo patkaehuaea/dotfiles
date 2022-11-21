@@ -4,15 +4,23 @@ yabai -m config top_padding 5
 yabai -m config bottom_paddingg 5
 yabai -m config left_padding 5
 yabai -m config right_padding 5
-yabai -m config window_gap 5
+yabai -m config window_gap 10
 yabai -m config active_window_border_color   0xff775759
 
 # window borders
 yabai -m config window_border                on
-yabai -m config window_border_width          8
-yabai -m config active_window_border_color   0xff775759
-yabai -m config normal_window_border_color   0xff555555
+yabai -m config window_border_width          2
+yabai -m config active_window_border_color   0xffe1e3e4
+yabai -m config normal_window_border_color   0xff2a2f38
+yabai -m config insert_feedback_color        0xff9dd274
+
+# window opacity
+yabai -m config \
+  window_opacity on \
+  active_window_opacity 1.0 \
+  normal_window_opacity 0.4 \
+  window_placement second_child
 
 # app specific rules
 yabai -m rule --add app="^System Preferences$" manage=off
-yabai -m rule --add app=Dashlane manage=off
+yabai -m rule --add app=Finder manage=off

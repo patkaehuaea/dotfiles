@@ -12,23 +12,23 @@ setxkbmap -option caps:escape
 # verify with: xdpyinfo | grep -B 2 resolution
 xrdb -merge ~/.Xresources
 
-# startup
-
 ## systemtray
 blueman-applet &
 nm-applet & 
 pasystray & 
-indicator-sound-switcher &
 xfce4-clipman &
 xfce4-power-manager &
+xfce4-screensaver --no-daemon &
 pamac-tray &
 
-## utilities
-picom -b --experimental-backends --dbus --config ~/.config/picom.conf &
+# Pass the --use-ewmh-active-win option to troubleshoot freezing window
+# issue in Slack and firefox on xmonad. 
+# ref: https://github.com/xmonad/xmonad/issues/201#issue-515477499
+picom -b --use-ewmh-active-win --experimental-backends --dbus --config ~/.config/picom.conf &
 
 ## apps
-
 discord &
-google-chrome-stable &
 spotify &
-
+# Use redshift to adjust color temperature of screen at night. 
+# Parse location coordinates instead of relying on geoclue dbus provider.
+redshift -l $(curl -s "https://location.services.mozilla.com/v1/geolocate?key=geoclue" | jq '.location.lat, .location.lng' | tr '\n' ':' | sed 's/:$//') &

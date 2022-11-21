@@ -1,6 +1,3 @@
 # Golang
 export GOPATH=$HOME/go
-
- #Azure CLI
-# Resolves issues resolving Sself-signed certs when invoking az login
-export REQUESTS_CA_BUNDLE=$(python3 -c "from requests.utils import DEFAULT_CA_BUNDLE_PATH; print(DEFAULT_CA_BUNDLE_PATH)")
+export PATH=$PATH:$GOPATH/bin
