@@ -17,7 +17,7 @@ export PYENV_ROOT="$HOME/.pyenv"
 command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 
-# python fix for netskope ca
+# fix for self-signed certs
 export REQUESTS_CA_BUNDLE=$(python -c "from requests.utils import DEFAULT_CA_BUNDLE_PATH; print(DEFAULT_CA_BUNDLE_PATH)")
 
 # autojump setup
