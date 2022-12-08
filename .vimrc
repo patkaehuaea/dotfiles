@@ -9,6 +9,7 @@ if empty(glob(data_dir . '/autoload/plug.vim'))
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
+call plug#begin()
 " A 24bit colorscheme based on the star Rigel - the bright blue star in the constellation of Orion
 Plug 'Rigellute/rigel'
 
@@ -78,10 +79,6 @@ Plug 'elzr/vim-json'
 
 " Smoother scrolling in editor.
 Plug 'psliwka/vim-smoothie'
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Must Have
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 call plug#end()
 
