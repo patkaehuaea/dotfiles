@@ -55,4 +55,5 @@ alias tdd="todo.sh do"
 #
 starship init fish | source
 
-
+# direnv shell hook
+direnv hook fish | source
