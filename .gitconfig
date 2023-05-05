@@ -165,6 +165,7 @@
 
 [init]
   templatedir = ~/.dotfiles/.git_template
+	defaultBranch = main
 
 [mergetool]
   prompt = false
