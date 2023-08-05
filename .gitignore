@@ -58,5 +58,6 @@ pids
 .config/fish/fish_variables
 
 # Ignore files installed with the z plugin.
+.config/fish/fish_plugins
 .config/fish/conf.d/z.fish
 .config/fish/functions/__z*
