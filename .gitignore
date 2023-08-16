@@ -49,3 +49,15 @@ Session.vim
 pids
 *.pid
 *.seed
+
+#########
+# Fish Shell #
+#########
+
+# Ignore host specific fish_variables file.
+.config/fish/fish_variables
+
+# Ignore files installed with the z plugin.
+.config/fish/fish_plugins
+.config/fish/conf.d/z.fish
+.config/fish/functions/__z*
